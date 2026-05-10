@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import { Check } from "lucide-react";
 import Avatar from "@components/common/Avatar";
 import Badge from "@components/common/Badge";
 import Highlight from "@components/common/Highlight";
@@ -18,6 +19,7 @@ const PRIORITY_STYLES: Record<string, string> = {
 };
 
 function InboxItem({
+  id,
   senderName,
   senderEmail,
   subject,
@@ -25,8 +27,11 @@ function InboxItem({
   status,
   priority,
   receivedAt,
+  selected,
+  onToggleSelect,
   searchQuery = "",
 }: {
+  id: string;
   senderName: string;
   senderEmail: string;
   subject: string;
@@ -34,6 +39,8 @@ function InboxItem({
   status: string;
   priority: string;
   receivedAt: string;
+  selected: boolean;
+  onToggleSelect: (id: string) => void;
   searchQuery?: string;
 }) {
   const statusClass =
@@ -53,11 +60,35 @@ function InboxItem({
   );
 
   return (
-    <li className="px-4 py-4 hover:bg-slate-100/90 dark:hover:bg-slate-900/50">
+    <li
+      className={`px-4 py-4 hover:bg-slate-100/90 dark:hover:bg-slate-900/50 ${selected ? "bg-slate-100/95 dark:bg-slate-900/70" : ""}`}
+    >
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-[1fr_3.6fr_0.75fr] sm:items-start">
         <div className="flex min-w-0 items-center justify-between gap-3 sm:justify-start sm:pt-0.5">
           <div className="flex min-w-0 items-center gap-3">
-            <Avatar initials={initialsFromName(senderName)} />
+            <label
+              className="relative shrink-0 cursor-pointer rounded-full outline-none has-focus-visible:ring-2 has-focus-visible:ring-slate-400 has-focus-visible:ring-offset-2 has-focus-visible:ring-offset-slate-50 dark:has-focus-visible:ring-offset-slate-950"
+              title={senderEmail}
+            >
+              <span className="sr-only">Select message from {senderName}</span>
+              <input
+                type="checkbox"
+                checked={selected}
+                onChange={() => onToggleSelect(id)}
+                className="sr-only"
+              />
+              {selected ? (
+                <span className="grid size-9 place-items-center rounded-full border border-emerald-600 bg-emerald-500/15 ring-1 ring-emerald-500/30 dark:border-emerald-500 dark:bg-emerald-500/20 dark:ring-emerald-500/40">
+                  <Check
+                    className="size-4 text-emerald-700 dark:text-emerald-300"
+                    aria-hidden="true"
+                    strokeWidth={2.5}
+                  />
+                </span>
+              ) : (
+                <Avatar initials={initialsFromName(senderName)} />
+              )}
+            </label>
             <div className="min-w-0">
               <div
                 className="truncate text-sm font-medium text-slate-900 dark:text-slate-100"
