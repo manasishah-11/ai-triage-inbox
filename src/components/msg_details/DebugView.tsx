@@ -1,68 +1,136 @@
-import { Loader2, RefreshCw } from "lucide-react";
-import type { LoadState } from "./AiAssistPanel";
+import { useState } from "react";
+import { ClipboardCopy, Loader2, RefreshCw } from "lucide-react";
+import type { AiAssistLoadStatus } from "@store/useAiAssistCacheStore";
+import {
+  aiAssistSchema,
+  formatAiAssistSchemaIssues,
+} from "@lib/aiAssistSchema";
+
+type DebugViewProps = {
+  messageId: string;
+  loadStatus: AiAssistLoadStatus;
+  loadError: string | null;
+  rawJson: string | null;
+  onRetry: () => void;
+};
 
 function DebugView({
-  load,
-  handleRetryLoad,
-}: {
-  load: LoadState;
-  handleRetryLoad: () => void;
-}) {
+  messageId,
+  loadStatus,
+  loadError,
+  rawJson,
+  onRetry,
+}: DebugViewProps) {
+  const [copyOk, setCopyOk] = useState(false);
+
+  const handleCopy = async () => {
+    if (!rawJson) return;
+    try {
+      await navigator.clipboard.writeText(rawJson);
+      setCopyOk(true);
+      window.setTimeout(() => setCopyOk(false), 2000);
+    } catch {
+      setCopyOk(false);
+    }
+  };
+
+  const loading = loadStatus === "loading";
+
+  const validationIssues = !loadError
+    ? []
+    : formatAiAssistSchemaIssues(
+        aiAssistSchema.safeParse(JSON.parse(loadError)).error,
+      );
+
+  console.log(validationIssues);
+
   return (
-    <div className="flex min-h-0 flex-1 flex-col overflow-y-auto px-4 py-5 sm:px-5">
-      {load.status === "loading" ? (
-        <div className="flex min-h-56 flex-col items-center justify-center gap-3 py-8">
-          <Loader2
-            className="size-9 animate-spin text-emerald-600 dark:text-emerald-400"
-            strokeWidth={2}
-            aria-hidden
-          />
-          <p className="text-center text-sm font-medium text-slate-800 dark:text-slate-100">
-            Loading payload…
-          </p>
-          <p className="max-w-xs text-center text-xs text-slate-500 dark:text-slate-400">
-            Simulated delay ~0.2–1.2s (same as inbox).
-          </p>
-        </div>
-      ) : (
-        <>
-          <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
-            <p className="text-[11px] font-medium uppercase tracking-wider text-slate-400 dark:text-slate-500">
-              Raw JSON
+    <div className="flex min-h-0 flex-1 flex-col overflow-hidden">
+      <div className="min-h-0 flex-1 overflow-y-auto px-4 py-5 sm:px-5">
+        <p className="text-[10px] font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+          Message
+        </p>
+        <p className="mt-1 font-mono text-xs text-slate-700 dark:text-slate-300">
+          {messageId}
+        </p>
+
+        <section className="mt-6 space-y-2">
+          <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+            Validation
+          </h3>
+          {loading ? (
+            <p className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+              <Loader2 className="size-4 shrink-0 animate-spin" aria-hidden />
+              Loading…
             </p>
-            <button
-              type="button"
-              onClick={handleRetryLoad}
-              className="inline-flex items-center gap-1.5 rounded-md border border-slate-200/90 bg-white/80 px-2 py-1 text-[11px] font-medium text-slate-600 backdrop-blur-sm hover:bg-slate-50 dark:border-slate-600/80 dark:bg-slate-800/80 dark:text-slate-300 dark:hover:bg-slate-800"
-            >
-              <RefreshCw className="size-3" strokeWidth={2} aria-hidden />
-              Retry
-            </button>
-          </div>
-          {load.errors.length > 0 ? (
-            <ul className="mb-3 space-y-1 rounded-md border border-rose-200/60 bg-rose-50/50 px-2.5 py-2 text-[11px] text-rose-900 dark:border-rose-500/25 dark:bg-rose-950/25 dark:text-rose-100">
-              {load.errors.map((err, i) => (
-                <li key={i}>
-                  <span className="font-mono text-[10px] text-rose-700/90 dark:text-rose-300/90">
-                    {err.path || "(root)"}
-                  </span>
-                  <span className="text-rose-800/80 dark:text-rose-200/80">
-                    {" "}
-                    — {err.message}
-                  </span>
-                </li>
-              ))}
+          ) : !loadError === true ? (
+            <p className="text-sm text-emerald-800 dark:text-emerald-200">
+              Schema valid — payload matches{" "}
+              <code className="text-xs">AiAssistData</code>.
+            </p>
+          ) : (
+            <ul className="space-y-2 rounded-lg border border-amber-500/35 bg-amber-500/10 p-3 dark:border-amber-500/25 dark:bg-amber-500/10">
+              {validationIssues.length > 0 &&
+                validationIssues.map((issue, i) => (
+                  <li
+                    key={i}
+                    className="text-sm text-amber-950 dark:text-amber-100"
+                  >
+                    <span className="font-mono text-xs text-amber-900/90 dark:text-amber-200/90">
+                      {issue.path}
+                    </span>
+                    <span className="text-amber-800 dark:text-amber-200/90">
+                      {" — "}
+                      {issue.message}
+                    </span>
+                  </li>
+                ))}
             </ul>
-          ) : load.status === "success" ? (
-            <p className="mb-3 text-[11px] text-slate-500 dark:text-slate-400">
-              Validation passed.
+          )}
+        </section>
+
+        <section className="mt-6 space-y-2">
+          <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+            Raw JSON
+          </h3>
+          {loading ? (
+            <p className="text-sm text-slate-500 dark:text-slate-400">
+              Waiting for response…
             </p>
-          ) : null}
-          <pre className="min-h-48 flex-1 overflow-auto rounded-lg border border-slate-200/80 bg-slate-50/50 p-3 font-mono text-[11px] leading-relaxed text-slate-800 tabular-nums dark:border-slate-700/80 dark:bg-slate-950/40 dark:text-slate-200">
-            {load.rawJson || "—"}
-          </pre>
-        </>
-      )}
+          ) : (
+            <pre className="max-h-[min(50vh,24rem)] overflow-auto rounded-lg border border-slate-200 bg-slate-50 p-3 text-xs leading-relaxed text-slate-800 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-200">
+              {rawJson}
+            </pre>
+          )}
+        </section>
+      </div>
+
+      <div className="shrink-0 border-t border-slate-200 px-4 py-4 dark:border-slate-800 sm:px-5">
+        <div className="flex flex-wrap items-center gap-2">
+          <button
+            type="button"
+            onClick={onRetry}
+            disabled={loading}
+            className="inline-flex items-center gap-2 rounded-md bg-amber-600 px-3 py-2 text-sm font-medium text-white hover:bg-amber-700 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-amber-600 dark:hover:bg-amber-500"
+          >
+            {loading ? (
+              <Loader2 className="size-4 animate-spin" aria-hidden />
+            ) : (
+              <RefreshCw className="size-4" aria-hidden />
+            )}
+            Retry load
+          </button>
+          <button
+            type="button"
+            onClick={handleCopy}
+            disabled={!rawJson || loading}
+            className="inline-flex items-center gap-2 rounded-md border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700"
+          >
+            <ClipboardCopy className="size-4" aria-hidden />
+            {copyOk ? "Copied" : "Copy JSON"}
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

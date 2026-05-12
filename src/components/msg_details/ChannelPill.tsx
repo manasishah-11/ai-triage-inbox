@@ -4,7 +4,7 @@ const channelIconClass = "size-3.5 shrink-0 text-slate-500 dark:text-slate-400";
 
 function ChannelPill({ channel }: { channel: string }) {
   const c = channel.toLowerCase();
-  const glyph =
+  const icon =
     c === "email" || c.includes("mail") ? (
       <Mail className={channelIconClass} strokeWidth={2} aria-hidden />
     ) : c === "chat" || c.includes("chat") ? (
@@ -18,7 +18,7 @@ function ChannelPill({ channel }: { channel: string }) {
       className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-xs shadow-sm dark:border-slate-600 dark:bg-slate-800/80 dark:shadow-none"
       title="Channel"
     >
-      {glyph}
+      {icon}
       <span className="sr-only">Channel: </span>
       <span className="font-medium capitalize text-slate-800 dark:text-slate-100">
         {channel}

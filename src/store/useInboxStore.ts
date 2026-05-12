@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { loadMockInboxData } from "@lib/mockInboxNetwork";
+import { loadMockInboxData } from "@mocks/mockNetwork";
 
 export type InboxItem = {
   id: string;
