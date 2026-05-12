@@ -2,20 +2,21 @@ import { useEffect, useMemo } from "react";
 import { Link, useParams } from "react-router";
 import { ArrowLeft } from "lucide-react";
 import { useInboxStore } from "@store/useInboxStore";
-import type { InboxItem } from "@store/useInboxStore";
 import MessageDetails from "@components/msg_details/MessageDetails";
-import itemsFromJSON from "@mocks/mockInboxData.json";
+import ErrorState from "@components/common/ErrorState";
+import LoadingState from "@components/common/LoadingState";
 
 function InboxDetails() {
   const { messageId } = useParams<{ messageId: string }>();
+
   const items = useInboxStore((s) => s.items);
-  const setItems = useInboxStore((s) => s.setItems);
+  const itemsLoadStatus = useInboxStore((s) => s.itemsLoadStatus);
+  const itemsLoadError = useInboxStore((s) => s.itemsLoadError);
+  const loadInboxItems = useInboxStore((s) => s.loadInboxItems);
 
   useEffect(() => {
-    if (items.length === 0) {
-      setItems(itemsFromJSON as InboxItem[]);
-    }
-  }, [items.length, setItems]);
+    void useInboxStore.getState().loadInboxItems();
+  }, []);
 
   const message = useMemo(
     () => items.find((m) => m.id === messageId),
@@ -40,6 +41,21 @@ function InboxDetails() {
         {!messageId ? (
           <div className="rounded-xl border border-slate-200 bg-white/70 p-8 text-center text-sm text-slate-600 dark:border-slate-800 dark:bg-slate-900/30 dark:text-slate-300">
             Missing message id.
+          </div>
+        ) : itemsLoadStatus === "error" && items.length === 0 ? (
+          <div className="rounded-xl border border-rose-200 bg-rose-50/80 p-8 dark:border-rose-900/40 dark:bg-rose-950/30">
+            <ErrorState
+              errorTitle="Could not load inbox"
+              errorMessage={itemsLoadError ?? "Unknown error."}
+              onRetry={() => void loadInboxItems()}
+            />
+          </div>
+        ) : items.length === 0 && itemsLoadStatus !== "ready" ? (
+          <div className="rounded-xl border border-slate-200 bg-white/70 p-8 dark:border-slate-800 dark:bg-slate-900/30">
+            <LoadingState
+              loadingTitle="Loading inbox…"
+              loadingMessage="Simulated network latency (about 0.2–1.2s)."
+            />
           </div>
         ) : !message ? (
           <div className="rounded-xl border border-slate-200 bg-white/70 p-8 text-center dark:border-slate-800 dark:bg-slate-900/30">

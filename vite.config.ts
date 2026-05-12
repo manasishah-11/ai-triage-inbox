@@ -16,6 +16,7 @@ export default defineConfig({
       "@store": fileURLToPath(new URL("./src/store", import.meta.url)),
       "@hooks": fileURLToPath(new URL("./src/hooks", import.meta.url)),
       "@mocks": fileURLToPath(new URL("./src/mocks", import.meta.url)),
+      "@lib": fileURLToPath(new URL("./src/lib", import.meta.url)),
     },
   },
 });

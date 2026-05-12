@@ -9,7 +9,6 @@ function applyThemeClass(theme: Theme) {
 type ThemeState = {
   theme: Theme;
   toggleTheme: () => void;
-  setTheme: (theme: Theme) => void;
 };
 
 export const useThemeStore = create<ThemeState>((set, get) => ({
@@ -18,9 +17,5 @@ export const useThemeStore = create<ThemeState>((set, get) => ({
     const next: Theme = get().theme === "dark" ? "light" : "dark";
     set({ theme: next });
     applyThemeClass(next);
-  },
-  setTheme: (theme) => {
-    set({ theme });
-    applyThemeClass(theme);
   },
 }));

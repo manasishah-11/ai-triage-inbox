@@ -17,11 +17,7 @@ function Badge({
         className,
       ].join(" ")}
     >
-      {suffix ? (
-        <span className="min-w-0 truncate">{label}</span>
-      ) : (
-        label
-      )}
+      {suffix ? <span className="min-w-0 truncate">{label}</span> : label}
       {suffix}
     </span>
   );

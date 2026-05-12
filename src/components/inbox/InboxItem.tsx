@@ -90,6 +90,7 @@ function InboxItem({
               </div>
             </div>
           </div>
+
           <div className="shrink-0 text-right text-xs text-slate-600 dark:text-slate-300 sm:hidden">
             {dateTime}
           </div>
@@ -100,6 +101,7 @@ function InboxItem({
             <span className="inline-block min-w-0 max-w-[calc(100%-9rem)] truncate align-middle text-sm text-slate-900 dark:text-slate-100">
               <Highlight text={subject} query={searchQuery} />
             </span>
+
             <span className="inline-flex shrink-0 items-center gap-1.5 align-middle">
               <Badge label={status} className={statusClass} />
               <Badge label={priority} className={priorityClass} />

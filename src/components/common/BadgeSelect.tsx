@@ -10,7 +10,6 @@ function optionsWithCurrent(
   return [{ value, label: value }, ...opts];
 }
 
-/** Pill UI from `Badge` with a chevron; invisible native `<select>` on top for choice + a11y. */
 function BadgeSelect({
   id,
   ariaLabel,

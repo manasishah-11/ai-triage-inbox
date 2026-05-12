@@ -5,12 +5,20 @@ import { useDebounce } from "@hooks/useDebounce";
 import { usePagination } from "@hooks/usePagination";
 import { useInboxStore } from "@store/useInboxStore";
 import type { InboxItem as InboxItemType } from "@store/useInboxStore";
+import ErrorState from "@components/common/ErrorState";
+import LoadingState from "@components/common/LoadingState";
 import InboxItem from "./InboxItem";
 import SearchAndFilter, { type SortOrder } from "./SearchAndFilter";
 
 function InboxList({ items }: { items: InboxItemType[] }) {
-  const  bulkUpdateMessageStatus  = useInboxStore((s) => s.bulkUpdateMessageStatus);
   const navigate = useNavigate();
+
+  const bulkUpdateMessageStatus = useInboxStore(
+    (s) => s.bulkUpdateMessageStatus,
+  );
+  const itemsLoadStatus = useInboxStore((s) => s.itemsLoadStatus);
+  const itemsLoadError = useInboxStore((s) => s.itemsLoadError);
+  const loadInboxItems = useInboxStore((s) => s.loadInboxItems);
 
   const [selectedIds, setSelectedIds] = useState<Set<string>>(() => new Set());
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -100,9 +108,16 @@ function InboxList({ items }: { items: InboxItemType[] }) {
               AI Triage Inbox
             </div>
             <div className="mt-1 text-sm text-slate-600 dark:text-slate-300">
-              {inbox.length} messages
+              {items.length === 0 && itemsLoadStatus === "error"
+                ? "Could not load messages"
+                : items.length === 0 &&
+                    (itemsLoadStatus === "loading" ||
+                      itemsLoadStatus === "idle")
+                  ? "Loading messages…"
+                  : `${inbox.length} messages`}
             </div>
           </div>
+
           <SearchAndFilter
             searchQuery={searchQuery}
             setSearchQuery={setSearchQuery}
@@ -141,8 +156,24 @@ function InboxList({ items }: { items: InboxItemType[] }) {
                 </div>
               </div>
             ) : null}
+
             <div className="min-h-0 flex-1 overflow-auto">
-              {pageItems.length === 0 ? (
+              {itemsLoadStatus === "error" && items.length === 0 ? (
+                <ErrorState
+                  errorTitle="Could not load inbox"
+                  errorMessage={itemsLoadError ?? "Unknown error."}
+                  onRetry={() => void loadInboxItems()}
+                />
+              ) : items.length === 0 && itemsLoadStatus !== "ready" ? (
+                <LoadingState
+                  loadingTitle="Loading inbox…"
+                  loadingMessage="Simulated network: random delay about 0.2–1.2s; roughly 10–15% of requests fail (retry to load)."
+                />
+              ) : items.length === 0 && itemsLoadStatus === "ready" ? (
+                <div className="flex h-full items-center justify-center p-8 text-sm text-slate-600 dark:text-slate-300">
+                  Inbox is empty.
+                </div>
+              ) : pageItems.length === 0 ? (
                 <div className="flex h-full items-center justify-center p-8 text-sm text-slate-600 dark:text-slate-300">
                   No messages match your search or filters.
                 </div>

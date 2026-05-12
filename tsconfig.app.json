@@ -15,7 +15,8 @@
       "@assets/*": ["src/assets/*"],
       "@store/*": ["src/store/*"],
       "@hooks/*": ["src/hooks/*"],
-      "@mocks/*": ["src/mocks/*"]
+      "@mocks/*": ["src/mocks/*"],
+      "@lib/*": ["src/lib/*"]
     },
 
     /* Bundler mode */

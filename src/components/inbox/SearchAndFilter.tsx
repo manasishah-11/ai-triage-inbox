@@ -1,4 +1,3 @@
-import FilterSelect from "@components/common/FilterSelect";
 import {
   ArrowDownWideNarrow,
   ArrowUpWideNarrow,
@@ -8,6 +7,7 @@ import {
   Search,
   X,
 } from "lucide-react";
+import FilterSelect from "@components/common/FilterSelect";
 import { PRIORITY_OPTIONS, STATUS_OPTIONS } from "../../constants";
 
 export type SortOrder = "newest" | "oldest";
@@ -71,6 +71,7 @@ function SearchAndFilter({
           </button>
         ) : null}
       </div>
+
       <div className="flex flex-1 flex-wrap items-center justify-between gap-2">
         <div className="flex items-center gap-2">
           <FilterSelect
@@ -103,6 +104,7 @@ function SearchAndFilter({
             </button>
           ) : null}
         </div>
+
         <button
           type="button"
           onClick={() =>

@@ -22,8 +22,10 @@ function MessageDetails({ message }: { message: InboxItem }) {
 
   const [aiAssistOpen, setAiAssistOpen] = useState(false);
   const [notesDraft, setNotesDraft] = useState(() => message.notes ?? "");
-  const debouncedNotes = useDebounce(notesDraft, 500);
+
   const notesDraftRef = useRef(notesDraft);
+
+  const debouncedNotes = useDebounce(notesDraft, 500);
 
   useEffect(() => {
     notesDraftRef.current = notesDraft;
@@ -49,23 +51,19 @@ function MessageDetails({ message }: { message: InboxItem }) {
 
   return (
     <div className="space-y-6">
-      <AiAssistPanel
-        key={message.id}
-        open={aiAssistOpen}
-        onClose={() => setAiAssistOpen(false)}
-        messageId={message.id}
-      />
       <div className="rounded-xl border border-slate-200 bg-white/80 shadow-sm dark:border-slate-800 dark:bg-slate-900/40 dark:shadow-none">
         <div className="border-b border-slate-200 px-5 py-5 dark:border-slate-800 sm:px-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
             <div className="flex min-w-0 flex-1 items-start gap-4">
               <Avatar initials={initialsFromName(message.sender.name)} />
+
               <div className="min-w-0 flex-1">
                 <div className="flex items-start justify-between gap-3">
                   <div className="min-w-0">
                     <div className="text-lg font-semibold leading-tight text-slate-900 dark:text-slate-100">
                       {message.sender.name}
                     </div>
+
                     <a
                       href={`mailto:${message.sender.email}`}
                       className="mt-0 block truncate text-sm leading-snug text-emerald-700 hover:underline dark:text-emerald-400"
@@ -73,6 +71,7 @@ function MessageDetails({ message }: { message: InboxItem }) {
                       {message.sender.email}
                     </a>
                   </div>
+
                   <div className="shrink-0 text-right text-sm sm:hidden">
                     <div className="leading-4 font-medium text-slate-900 dark:text-slate-100">
                       {format(message.received_at, "MMM d, yyyy")}
@@ -82,6 +81,7 @@ function MessageDetails({ message }: { message: InboxItem }) {
                     </div>
                   </div>
                 </div>
+
                 {(message.channel || (message.tags?.length ?? 0) > 0) && (
                   <div className="mt-2 flex flex-wrap items-center gap-2">
                     {message.channel ? (
@@ -99,6 +99,7 @@ function MessageDetails({ message }: { message: InboxItem }) {
                 )}
               </div>
             </div>
+
             <div className="hidden shrink-0 text-sm sm:block sm:text-right">
               <div className="leading-4 font-medium text-slate-900 dark:text-slate-100">
                 {format(message.received_at, "MMM d, yyyy")}
@@ -113,6 +114,7 @@ function MessageDetails({ message }: { message: InboxItem }) {
             <h1 className="min-w-0 flex-1 text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-100 sm:text-2xl">
               {message.subject}
             </h1>
+
             <button
               type="button"
               onClick={() => setAiAssistOpen(true)}
@@ -134,6 +136,7 @@ function MessageDetails({ message }: { message: InboxItem }) {
                 onChange={(next) => updateMessageStatus(message.id, next)}
               />
             ) : null}
+
             {priorityClass ? (
               <BadgeSelect
                 id="detail-priority"
@@ -175,6 +178,13 @@ function MessageDetails({ message }: { message: InboxItem }) {
           />
         </div>
       </div>
+
+      <AiAssistPanel
+        key={message.id}
+        open={aiAssistOpen}
+        onClose={() => setAiAssistOpen(false)}
+        messageId={message.id}
+      />
     </div>
   );
 }
