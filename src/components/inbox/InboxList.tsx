@@ -28,6 +28,15 @@ function InboxList({ items }: { items: InboxItemType[] }) {
 
   const debouncedSearchQuery = useDebounce(searchQuery, 300);
 
+  const visibleSelectedIds = useMemo(() => {
+    const allowed = new Set(items.map((m) => m.id));
+    const next = new Set<string>();
+    for (const id of selectedIds) {
+      if (allowed.has(id)) next.add(id);
+    }
+    return next;
+  }, [items, selectedIds]);
+
   const inbox = useMemo(() => {
     const q = debouncedSearchQuery.trim().toLowerCase();
     return items
@@ -47,7 +56,7 @@ function InboxList({ items }: { items: InboxItemType[] }) {
           new Date(a.received_at).valueOf() - new Date(b.received_at).valueOf();
         return sortOrder === "newest" ? -diff : diff;
       });
-  }, [items, debouncedSearchQuery, statusFilter, priorityFilter, sortOrder]);
+  }, [debouncedSearchQuery, items, statusFilter, priorityFilter, sortOrder]);
 
   const toggleSelect = useCallback((id: string) => {
     setSelectedIds((prev) => {
@@ -59,9 +68,13 @@ function InboxList({ items }: { items: InboxItemType[] }) {
   }, []);
 
   const markSelectedDone = useCallback(() => {
-    bulkUpdateMessageStatus(selectedIds, "Done");
-    setSelectedIds(new Set());
-  }, [bulkUpdateMessageStatus, selectedIds]);
+    bulkUpdateMessageStatus(visibleSelectedIds, "Done");
+    setSelectedIds((prev) => {
+      const next = new Set(prev);
+      for (const id of visibleSelectedIds) next.delete(id);
+      return next;
+    });
+  }, [bulkUpdateMessageStatus, visibleSelectedIds]);
 
   const clearSelection = useCallback(() => {
     setSelectedIds(new Set());
@@ -100,119 +113,98 @@ function InboxList({ items }: { items: InboxItemType[] }) {
   const pageItems = inbox.slice(startIndex, startIndex + pageSize);
 
   return (
-    <div className="h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
-      <div className="mx-auto flex h-full max-w-5xl flex-col px-4 sm:px-6 lg:px-8">
-        <div className="space-y-4 bg-slate-50/80 py-6 backdrop-blur dark:bg-slate-950/80">
-          <div>
-            <div className="text-2xl font-semibold tracking-tight">
-              AI Triage Inbox
-            </div>
-            <div className="mt-1 text-sm text-slate-600 dark:text-slate-300">
-              {items.length === 0 && itemsLoadStatus === "error"
-                ? "Could not load messages"
-                : items.length === 0 &&
-                    (itemsLoadStatus === "loading" ||
-                      itemsLoadStatus === "idle")
-                  ? "Loading messages…"
-                  : `${inbox.length} messages`}
+    <div className="flex min-h-0 flex-1 flex-col gap-3">
+      <SearchAndFilter
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        statusFilter={statusFilter}
+        setStatusFilter={setStatusFilter}
+        priorityFilter={priorityFilter}
+        setPriorityFilter={setPriorityFilter}
+        sortOrder={sortOrder}
+        setSortOrder={setSortOrder}
+        onClearFilters={clearFilters}
+      />
+
+      <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-xl border border-slate-200 bg-white/70 shadow-sm dark:border-slate-800 dark:bg-slate-900/30 dark:shadow-none">
+        {visibleSelectedIds.size > 0 ? (
+          <div className="flex shrink-0 flex-wrap items-center justify-between gap-3 border-b border-slate-200 bg-slate-100/90 px-4 py-2.5 dark:border-slate-800 dark:bg-slate-900/90">
+            <span className="text-sm text-slate-700 dark:text-slate-200">
+              {visibleSelectedIds.size} selected
+            </span>
+            <div className="flex flex-wrap items-center gap-2">
+              <button
+                type="button"
+                onClick={clearSelection}
+                className="rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm text-slate-700 hover:bg-slate-50 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
+              >
+                Clear
+              </button>
+              <button
+                type="button"
+                onClick={markSelectedDone}
+                className="rounded-md bg-emerald-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-emerald-700 dark:bg-emerald-600 dark:hover:bg-emerald-500"
+              >
+                Mark as done
+              </button>
             </div>
           </div>
+        ) : null}
 
-          <SearchAndFilter
-            searchQuery={searchQuery}
-            setSearchQuery={setSearchQuery}
-            statusFilter={statusFilter}
-            setStatusFilter={setStatusFilter}
-            priorityFilter={priorityFilter}
-            setPriorityFilter={setPriorityFilter}
-            sortOrder={sortOrder}
-            setSortOrder={setSortOrder}
-            onClearFilters={clearFilters}
-          />
-        </div>
-
-        <div className="flex min-h-0 flex-1 pb-6">
-          <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-xl border border-slate-200 bg-white/70 shadow-sm dark:border-slate-800 dark:bg-slate-900/30 dark:shadow-none">
-            {selectedIds.size > 0 ? (
-              <div className="flex shrink-0 flex-wrap items-center justify-between gap-3 border-b border-slate-200 bg-slate-100/90 px-4 py-2.5 dark:border-slate-800 dark:bg-slate-900/90">
-                <span className="text-sm text-slate-700 dark:text-slate-200">
-                  {selectedIds.size} selected
-                </span>
-                <div className="flex flex-wrap items-center gap-2">
-                  <button
-                    type="button"
-                    onClick={clearSelection}
-                    className="rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm text-slate-700 hover:bg-slate-50 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
-                  >
-                    Clear
-                  </button>
-                  <button
-                    type="button"
-                    onClick={markSelectedDone}
-                    className="rounded-md bg-emerald-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-emerald-700 dark:bg-emerald-600 dark:hover:bg-emerald-500"
-                  >
-                    Mark as done
-                  </button>
-                </div>
-              </div>
-            ) : null}
-
-            <div className="min-h-0 flex-1 overflow-auto">
-              {itemsLoadStatus === "error" && items.length === 0 ? (
-                <ErrorState
-                  errorTitle="Could not load inbox"
-                  errorMessage={itemsLoadError ?? "Unknown error."}
-                  onRetry={() => void loadInboxItems()}
-                />
-              ) : items.length === 0 && itemsLoadStatus !== "ready" ? (
-                <LoadingState
-                  loadingTitle="Loading inbox…"
-                  loadingMessage="Simulated network: random delay about 0.2–1.2s; roughly 10–15% of requests fail (retry to load)."
-                />
-              ) : items.length === 0 && itemsLoadStatus === "ready" ? (
-                <div className="flex h-full items-center justify-center p-8 text-sm text-slate-600 dark:text-slate-300">
-                  Inbox is empty.
-                </div>
-              ) : pageItems.length === 0 ? (
-                <div className="flex h-full items-center justify-center p-8 text-sm text-slate-600 dark:text-slate-300">
-                  No messages match your search or filters.
-                </div>
-              ) : (
-                <ul>
-                  {pageItems.map((m) => (
-                    <InboxItem
-                      key={m.id}
-                      id={m.id}
-                      senderName={m.sender.name}
-                      senderEmail={m.sender.email}
-                      subject={m.subject}
-                      body={m.body}
-                      status={m.status}
-                      priority={m.priority}
-                      receivedAt={m.received_at}
-                      selected={selectedIds.has(m.id)}
-                      onToggleSelect={toggleSelect}
-                      onOpenDetail={openDetail}
-                      searchQuery={debouncedSearchQuery}
-                    />
-                  ))}
-                </ul>
-              )}
-            </div>
-
-            <Pagination
-              safePage={safePage}
-              totalPages={totalPages}
-              pageSize={pageSize}
-              rowCount={inbox.length}
-              showingFrom={showingFrom}
-              showingTo={showingTo}
-              onPrev={goPrev}
-              onNext={goNext}
-              onPageSizeChange={changePageSize}
+        <div className="min-h-0 flex-1 overflow-auto">
+          {itemsLoadStatus === "error" && items.length === 0 ? (
+            <ErrorState
+              errorTitle="Could not load inbox"
+              errorMessage={itemsLoadError ?? "Unknown error."}
+              onRetry={() => void loadInboxItems()}
             />
-          </div>
+          ) : items.length === 0 && itemsLoadStatus !== "ready" ? (
+            <LoadingState
+              loadingTitle="Loading inbox…"
+              loadingMessage="Simulated network: random delay about 0.2–1.2s; roughly 10–15% of requests fail (retry to load)."
+            />
+          ) : items.length === 0 && itemsLoadStatus === "ready" ? (
+            <div className="flex h-full items-center justify-center p-8 text-sm text-slate-600 dark:text-slate-300">
+              Inbox is empty.
+            </div>
+          ) : pageItems.length === 0 ? (
+            <div className="flex h-full items-center justify-center p-8 text-sm text-slate-600 dark:text-slate-300">
+              No messages match your search or filters
+            </div>
+          ) : (
+            <ul>
+              {pageItems.map((m) => (
+                <InboxItem
+                  key={m.id}
+                  id={m.id}
+                  senderName={m.sender.name}
+                  senderEmail={m.sender.email}
+                  subject={m.subject}
+                  body={m.body}
+                  status={m.status}
+                  priority={m.priority}
+                  receivedAt={m.received_at}
+                  selected={visibleSelectedIds.has(m.id)}
+                  onToggleSelect={toggleSelect}
+                  onOpenDetail={openDetail}
+                  searchQuery={debouncedSearchQuery}
+                />
+              ))}
+            </ul>
+          )}
         </div>
+
+        <Pagination
+          safePage={safePage}
+          totalPages={totalPages}
+          pageSize={pageSize}
+          rowCount={inbox.length}
+          showingFrom={showingFrom}
+          showingTo={showingTo}
+          onPrev={goPrev}
+          onNext={goNext}
+          onPageSizeChange={changePageSize}
+        />
       </div>
     </div>
   );

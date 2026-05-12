@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useInboxStore } from "@store/useInboxStore";
-import InboxList from "@components/inbox/InboxList";
+import InboxTabs from "@components/inbox/InboxTabs";
 
 function Inbox() {
   const items = useInboxStore((s) => s.items);
@@ -9,7 +9,7 @@ function Inbox() {
     void useInboxStore.getState().loadInboxItems();
   }, []);
 
-  return <InboxList items={items} />;
+  return <InboxTabs items={items} />;
 }
 
 export default Inbox;
