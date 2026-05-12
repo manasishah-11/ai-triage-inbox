@@ -3,25 +3,23 @@ import {
   ArrowDownWideNarrow,
   ArrowUpWideNarrow,
   CircleDot,
+  FilterX,
   Flag,
   Search,
   X,
 } from "lucide-react";
+import { PRIORITY_OPTIONS, STATUS_OPTIONS } from "../../constants";
 
 export type SortOrder = "newest" | "oldest";
 
 const STATUS_FILTER_OPTIONS = [
   { value: "All", label: "All" },
-  { value: "New", label: "New" },
-  { value: "In Progress", label: "In Progress" },
-  { value: "Done", label: "Done" },
+  ...STATUS_OPTIONS,
 ];
 
 const PRIORITY_FILTER_OPTIONS = [
   { value: "All", label: "All" },
-  { value: "P1", label: "P1" },
-  { value: "P2", label: "P2" },
-  { value: "P3", label: "P3" },
+  ...PRIORITY_OPTIONS,
 ];
 
 function SearchAndFilter({
@@ -33,6 +31,7 @@ function SearchAndFilter({
   setPriorityFilter,
   sortOrder,
   setSortOrder,
+  onClearFilters,
 }: {
   searchQuery: string;
   setSearchQuery: (value: string) => void;
@@ -42,7 +41,10 @@ function SearchAndFilter({
   setPriorityFilter: (value: string) => void;
   sortOrder: string;
   setSortOrder: (value: SortOrder) => void;
+  onClearFilters: () => void;
 }) {
+  const hasActiveFilters = statusFilter !== "All" || priorityFilter !== "All";
+
   return (
     <div className="flex flex-col flex-wrap items-stretch gap-2 sm:flex-row sm:items-center">
       <div className="relative min-w-48 flex-1 sm:max-w-xs">
@@ -89,6 +91,17 @@ function SearchAndFilter({
             onChange={setPriorityFilter}
             showValue={priorityFilter !== "All"}
           />
+          {hasActiveFilters ? (
+            <button
+              type="button"
+              onClick={onClearFilters}
+              title="Clear search and status/priority filters"
+              className="inline-flex cursor-pointer items-center gap-1 rounded-md px-2 py-2 text-xs text-slate-500 transition-colors hover:bg-slate-100/90 hover:text-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/35 dark:text-slate-400 dark:hover:bg-slate-800/70 dark:hover:text-slate-200 dark:focus-visible:ring-slate-500/40"
+            >
+              <FilterX className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+              <span className="whitespace-nowrap">Clear filters</span>
+            </button>
+          ) : null}
         </div>
         <button
           type="button"

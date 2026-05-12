@@ -16,25 +16,38 @@ input[type="search"]::-webkit-search-decoration {
   scrollbar-color: rgb(148 163 184 / 0.55) rgb(241 245 249 / 0.95);
 }
 
+html.dark {
+  scrollbar-color: rgb(71 85 105 / 0.55) rgb(15 23 42 / 0.6);
+}
+
 .dark * {
   scrollbar-color: rgb(71 85 105 / 0.55) rgb(15 23 42 / 0.6);
 }
 
-/* Scrollbars — Chromium, Safari, Edge */
+/* Scrollbars — Chromium, Safari, Edge
+   Include html/body: WebKit often ignores * for the viewport (document) scrollbar;
+   inner overflow areas still match *. */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
 *::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track,
 *::-webkit-scrollbar-track {
   background: rgb(241 245 249 / 0.9);
   border-radius: 9999px;
 }
 
+html.dark::-webkit-scrollbar-track,
 .dark *::-webkit-scrollbar-track {
   background: rgb(15 23 42 / 0.45);
 }
 
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
 *::-webkit-scrollbar-thumb {
   background: linear-gradient(
     180deg,
@@ -46,6 +59,7 @@ input[type="search"]::-webkit-search-decoration {
   background-clip: padding-box;
 }
 
+html.dark::-webkit-scrollbar-thumb,
 .dark *::-webkit-scrollbar-thumb {
   background: linear-gradient(
     180deg,
@@ -54,6 +68,8 @@ input[type="search"]::-webkit-search-decoration {
   );
 }
 
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover,
 *::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(
     180deg,
@@ -63,6 +79,7 @@ input[type="search"]::-webkit-search-decoration {
   background-clip: padding-box;
 }
 
+html.dark::-webkit-scrollbar-thumb:hover,
 .dark *::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(
     180deg,
@@ -71,19 +88,25 @@ input[type="search"]::-webkit-search-decoration {
   );
 }
 
+html::-webkit-scrollbar-thumb:active,
+body::-webkit-scrollbar-thumb:active,
 *::-webkit-scrollbar-thumb:active {
   background: rgb(100 116 139 / 0.85);
   background-clip: padding-box;
 }
 
+html.dark::-webkit-scrollbar-thumb:active,
 .dark *::-webkit-scrollbar-thumb:active {
   background: rgb(100 116 139 / 0.9);
 }
 
+html::-webkit-scrollbar-corner,
+body::-webkit-scrollbar-corner,
 *::-webkit-scrollbar-corner {
   background: rgb(241 245 249 / 0.9);
 }
 
+html.dark::-webkit-scrollbar-corner,
 .dark *::-webkit-scrollbar-corner {
   background: rgb(15 23 42 / 0.45);
 }

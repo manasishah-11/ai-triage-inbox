@@ -4,19 +4,7 @@ import Avatar from "@components/common/Avatar";
 import Badge from "@components/common/Badge";
 import Highlight from "@components/common/Highlight";
 import { bodyPreviewLines, initialsFromName } from "../../utils";
-
-const STATUS_STYLES: Record<string, string> = {
-  New: "bg-blue-500/12 text-blue-800 ring-blue-500/25 dark:bg-blue-500/15 dark:text-blue-200 dark:ring-blue-500/30",
-  "In Progress":
-    "bg-amber-500/12 text-amber-900 ring-amber-500/25 dark:bg-amber-500/15 dark:text-amber-200 dark:ring-amber-500/30",
-  Done: "bg-emerald-500/12 text-emerald-800 ring-emerald-500/25 dark:bg-emerald-500/15 dark:text-emerald-200 dark:ring-emerald-500/30",
-};
-
-const PRIORITY_STYLES: Record<string, string> = {
-  P1: "bg-rose-500/12 text-rose-800 ring-rose-500/25 dark:bg-rose-500/15 dark:text-rose-200 dark:ring-rose-500/30",
-  P2: "bg-violet-500/12 text-violet-800 ring-violet-500/25 dark:bg-violet-500/15 dark:text-violet-200 dark:ring-violet-500/30",
-  P3: "bg-slate-500/12 text-slate-700 ring-slate-400/30 dark:bg-slate-500/15 dark:text-slate-200 dark:ring-slate-400/30",
-};
+import { STATUS_STYLES, PRIORITY_STYLES } from "../../constants";
 
 function InboxItem({
   id,
@@ -29,6 +17,7 @@ function InboxItem({
   receivedAt,
   selected,
   onToggleSelect,
+  onOpenDetail,
   searchQuery = "",
 }: {
   id: string;
@@ -41,6 +30,7 @@ function InboxItem({
   receivedAt: string;
   selected: boolean;
   onToggleSelect: (id: string) => void;
+  onOpenDetail: (id: string) => void;
   searchQuery?: string;
 }) {
   const statusClass =
@@ -61,7 +51,8 @@ function InboxItem({
 
   return (
     <li
-      className={`px-4 py-4 hover:bg-slate-100/90 dark:hover:bg-slate-900/50 ${selected ? "bg-slate-100/95 dark:bg-slate-900/70" : ""}`}
+      className={`cursor-pointer px-4 py-4 hover:bg-slate-100/90 dark:hover:bg-slate-900/50 ${selected ? "bg-slate-100/95 dark:bg-slate-900/70" : ""}`}
+      onClick={() => onOpenDetail(id)}
     >
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-[1fr_3.6fr_0.75fr] sm:items-start">
         <div className="flex min-w-0 items-center justify-between gap-3 sm:justify-start sm:pt-0.5">
@@ -69,6 +60,7 @@ function InboxItem({
             <label
               className="relative shrink-0 cursor-pointer rounded-full outline-none has-focus-visible:ring-2 has-focus-visible:ring-slate-400 has-focus-visible:ring-offset-2 has-focus-visible:ring-offset-slate-50 dark:has-focus-visible:ring-offset-slate-950"
               title={senderEmail}
+              onClick={(e) => e.stopPropagation()}
             >
               <span className="sr-only">Select message from {senderName}</span>
               <input

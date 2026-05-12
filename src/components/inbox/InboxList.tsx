@@ -1,17 +1,18 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router";
 import Pagination from "@components/common/Pagination";
 import { useDebounce } from "@hooks/useDebounce";
 import { usePagination } from "@hooks/usePagination";
+import { useInboxStore } from "@store/useInboxStore";
+import type { InboxItem as InboxItemType } from "@store/useInboxStore";
 import InboxItem from "./InboxItem";
 import SearchAndFilter, { type SortOrder } from "./SearchAndFilter";
-import type { InboxItem as InboxItemType } from "../../types";
 
 function InboxList({ items }: { items: InboxItemType[] }) {
-  const [records, setRecords] = useState<InboxItemType[]>(() =>
-    items.map((i) => ({ ...i })),
-  );
-  const [selectedIds, setSelectedIds] = useState<Set<string>>(() => new Set());
+  const  bulkUpdateMessageStatus  = useInboxStore((s) => s.bulkUpdateMessageStatus);
+  const navigate = useNavigate();
 
+  const [selectedIds, setSelectedIds] = useState<Set<string>>(() => new Set());
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [statusFilter, setStatusFilter] = useState<string>("All");
   const [priorityFilter, setPriorityFilter] = useState<string>("All");
@@ -21,7 +22,7 @@ function InboxList({ items }: { items: InboxItemType[] }) {
 
   const inbox = useMemo(() => {
     const q = debouncedSearchQuery.trim().toLowerCase();
-    return records
+    return items
       .filter((m) => statusFilter === "All" || m.status === statusFilter)
       .filter((m) => priorityFilter === "All" || m.priority === priorityFilter)
       .filter((m) => {
@@ -38,7 +39,7 @@ function InboxList({ items }: { items: InboxItemType[] }) {
           new Date(a.received_at).valueOf() - new Date(b.received_at).valueOf();
         return sortOrder === "newest" ? -diff : diff;
       });
-  }, [records, debouncedSearchQuery, statusFilter, priorityFilter, sortOrder]);
+  }, [items, debouncedSearchQuery, statusFilter, priorityFilter, sortOrder]);
 
   const toggleSelect = useCallback((id: string) => {
     setSelectedIds((prev) => {
@@ -50,17 +51,26 @@ function InboxList({ items }: { items: InboxItemType[] }) {
   }, []);
 
   const markSelectedDone = useCallback(() => {
-    setRecords((rows) =>
-      rows.map((r) =>
-        selectedIds.has(r.id) ? { ...r, status: "Done" } : r,
-      ),
-    );
+    bulkUpdateMessageStatus(selectedIds, "Done");
     setSelectedIds(new Set());
-  }, [selectedIds]);
+  }, [bulkUpdateMessageStatus, selectedIds]);
 
   const clearSelection = useCallback(() => {
     setSelectedIds(new Set());
   }, []);
+
+  const clearFilters = useCallback(() => {
+    setSearchQuery("");
+    setStatusFilter("All");
+    setPriorityFilter("All");
+  }, []);
+
+  const openDetail = useCallback(
+    (id: string) => {
+      navigate(`/inbox/${id}`);
+    },
+    [navigate],
+  );
 
   const {
     pageSize,
@@ -80,6 +90,7 @@ function InboxList({ items }: { items: InboxItemType[] }) {
   }, [debouncedSearchQuery, statusFilter, priorityFilter, setPage]);
 
   const pageItems = inbox.slice(startIndex, startIndex + pageSize);
+
   return (
     <div className="h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
       <div className="mx-auto flex h-full max-w-5xl flex-col px-4 sm:px-6 lg:px-8">
@@ -101,6 +112,7 @@ function InboxList({ items }: { items: InboxItemType[] }) {
             setPriorityFilter={setPriorityFilter}
             sortOrder={sortOrder}
             setSortOrder={setSortOrder}
+            onClearFilters={clearFilters}
           />
         </div>
 
@@ -149,6 +161,7 @@ function InboxList({ items }: { items: InboxItemType[] }) {
                       receivedAt={m.received_at}
                       selected={selectedIds.has(m.id)}
                       onToggleSelect={toggleSelect}
+                      onOpenDetail={openDetail}
                       searchQuery={debouncedSearchQuery}
                     />
                   ))}
