@@ -1,0 +1,702 @@
+[
+  {
+    "id": "itm_001",
+    "summary_bullets": [
+      "Customer reports renewal premium increased from ฿12,400 to ฿15,900 with no changes to vehicle or coverage",
+      "Policy number TH-CAR-44821; policy lapses on March 20 — resolution is time-sensitive",
+      "No accidents or modifications reported; customer believes the increase is unjustified",
+      "Customer requests a reviewed and corrected invoice before lapse date"
+    ],
+    "category": "Billing",
+    "priority": "P2",
+    "suggested_action": "Pull policy TH-CAR-44821, review underwriting factors for the renewal uplift, and respond with a clear breakdown of the premium change before March 20.",
+    "draft_reply": "Dear Nok,\n\nThank you for reaching out. I'm sorry to hear about the unexpected increase in your renewal premium.\n\nI have pulled up your policy TH-CAR-44821 and am reviewing the underwriting details for this renewal cycle. Premium adjustments can sometimes occur due to market-wide rate changes or updated risk model factors, even when your personal details remain unchanged.\n\nI will send you a full itemised breakdown of the premium components within 1 business day. If an error is found, we will issue a corrected invoice immediately.\n\nGiven your lapse date of March 20, please rest assured we are treating this as a priority.\n\nWarm regards,\nQoala Support Team",
+    "confidence": 0.72
+  },
+  {
+    "id": "itm_002",
+    "summary_bullets": [
+      "Customer requests an endorsement to change vehicle plate from กข 1234 to งจ 5678 on policy TH-MTR-99210",
+      "Effective date requested is March 20, 2026",
+      "Registration document was already submitted via the portal last week",
+      "Case is already In Progress — requires confirmation and updated certificate"
+    ],
+    "category": "Endorsement",
+    "priority": "P3",
+    "suggested_action": "Verify the uploaded registration document on the portal, process the plate change endorsement, and issue an updated certificate of insurance before March 20.",
+    "draft_reply": "Dear Khun Somchai,\n\nThank you for your endorsement request.\n\nI can confirm we have located your submission for the vehicle plate change on policy TH-MTR-99210:\n- Old plate: กข 1234 Bangkok\n- New plate: งจ 5678 Bangkok\n\nWe have verified the registration document you uploaded and are processing the endorsement now. An updated certificate of insurance reflecting the new plate will be issued to you before March 20, 2026.\n\nPlease let us know if you need anything further.\n\nKind regards,\nQoala Support Team",
+    "confidence": 0.91
+  },
+  {
+    "id": "itm_003",
+    "summary_bullets": [
+      "Inbound message contains a prompt injection attempt instructing staff to send internal access tokens",
+      "Sender domain 'totally-legit.biz' is suspicious and unrelated to any known customer or partner",
+      "Message uses classic phishing urgency tactics — account suspension threat within 24 hours",
+      "Contains a malicious link; no legitimate policy or customer information present"
+    ],
+    "category": "Spam",
+    "priority": "P1",
+    "suggested_action": "Mark as spam and flag to the security team immediately. Do not click any links. Block sender domain and log the prompt injection attempt for the security incident register.",
+    "draft_reply": "No reply should be sent to this sender. This message has been flagged as a phishing and prompt injection attempt and escalated to the internal security team for review and domain blocking.",
+    "confidence": 0.98
+  },
+  {
+    "id": "itm_004",
+    "summary_bullets": [
+      "Customer filing a home insurance claim for flood damage that occurred March 13, 2026",
+      "Property at 45/2 Sukhumvit Soi 11, Bangkok; policy TH-HOM-20931",
+      "Affected items include furniture, appliances, and structural flooring; contractor estimate is ฿87,000",
+      "Customer is currently displaced and has 14 photos plus a repair estimate ready to submit"
+    ],
+    "category": "Claims",
+    "priority": "P1",
+    "suggested_action": "Acknowledge the claim urgently, assign a loss adjuster for a site inspection, and confirm temporary accommodation benefit eligibility given the customer is displaced.",
+    "draft_reply": "Dear Khun Wanida,\n\nThank you for notifying us. I'm very sorry to hear about the flood damage to your home and that you are currently displaced — your safety and wellbeing are our priority.\n\nI have registered your claim under policy TH-HOM-20931 and a claims reference number will be issued to you within the next few hours. A licensed loss adjuster will be in contact within 1 business day to arrange a site inspection at your Sukhumvit Soi 11 property.\n\nIn the meantime, please:\n1. Preserve all damaged items for the adjuster's inspection where safe to do so\n2. Keep all receipts for any emergency accommodation or immediate repair expenses\n3. Send your 14 photos and the contractor estimate (฿87,000) to claims@qoala.co.th quoting your policy number\n\nWe will also assess whether your policy includes a temporary accommodation benefit.\n\nWarm regards,\nQoala Claims Team",
+    "confidence": 0.87
+  },
+  {
+    "id": "itm_005",
+    "summary_bullets": [
+      "Startup with 12 employees enquiring about group health insurance options",
+      "Questions cover minimum headcount, pre-existing conditions, premium range, and dental/vision riders",
+      "Customer is open to a quote and available for a call — this is a new business opportunity",
+      "Case is marked Done — query was likely answered previously"
+    ],
+    "category": "General",
+    "priority": "P3",
+    "suggested_action": "Confirm the enquiry has been addressed and follow up with a group health product brochure and quote if not already sent.",
+    "draft_reply": "Dear Arun,\n\nThank you for your interest in a group health policy for your team.\n\nTo confirm the key points:\n- Minimum headcount: 5 employees for a group policy\n- Pre-existing conditions: subject to a 12-month waiting period under standard terms\n- Premium range: approximately ฿800–฿1,800 per employee per month depending on coverage tier\n- Dental and vision riders are available as optional add-ons\n\nI would be happy to prepare a tailored quote for 12 employees. Please feel free to share a convenient time for a call and we can walk you through the options.\n\nBest regards,\nQoala Business Team",
+    "confidence": 0.61
+  },
+  {
+    "id": "itm_006",
+    "summary_bullets": [
+      "Customer unable to download insurance certificate from the portal for 3 days",
+      "Issue reproduced on both Chrome and Safari — likely a backend or PDF generation issue, not browser-specific",
+      "Customer needs the certificate urgently for a car service appointment the next morning",
+      "No policy number provided; will need to look up by email or name"
+    ],
+    "category": "General",
+    "priority": "P2",
+    "suggested_action": "Manually generate and email the insurance certificate to the customer immediately, and log the portal download bug with the tech team.",
+    "draft_reply": "Dear Khun Malee,\n\nI'm sorry for the inconvenience with the certificate download — we are aware this is time-sensitive ahead of your appointment tomorrow.\n\nI have located your policy and am generating your insurance certificate manually. It will be sent directly to your registered email address within the next 30 minutes.\n\nOur technical team has also been notified of the portal download issue and will investigate the blank page error.\n\nIf you do not receive the certificate within the hour, please reply to this chat and we will prioritise resending.\n\nBest regards,\nQoala Support Team",
+    "confidence": 0.55
+  },
+  {
+    "id": "itm_007",
+    "summary_bullets": [
+      "Formal legal notification of a third-party liability claim from a law firm on behalf of an injured party",
+      "Accident occurred March 10, 2026 near Asok BTS; insured policy is TH-CAR-77302",
+      "Law firm requests confirmation of receipt and assignment of a claims handler within 48 hours per Thai regulations",
+      "Physical documentation to follow by registered post — case requires immediate legal and claims team involvement"
+    ],
+    "category": "Claims",
+    "priority": "P1",
+    "suggested_action": "Acknowledge receipt formally within 24 hours, assign a dedicated claims handler and legal liaison, and notify the insured policyholder TH-CAR-77302 of the third-party claim.",
+    "draft_reply": "Dear Khun Thanakorn,\n\nThank you for your formal notification regarding the March 10, 2026 road traffic accident near Asok BTS intersection.\n\nWe confirm receipt of your third-party liability claim on behalf of Mr. Chaiwat Somboon against policy TH-CAR-77302. A dedicated claims handler has been assigned and will be in contact with your office within 24 hours.\n\nPlease direct all further correspondence and registered post documentation to:\nQoala Claims — Legal & Liability Division\nclaims.legal@qoala.co.th\n\nClaim Reference: [to be issued within 2 hours]\n\nWe will ensure compliance with all applicable Thai insurance regulatory timelines.\n\nYours sincerely,\nQoala Claims Team",
+    "confidence": 0.93
+  },
+  {
+    "id": "itm_008",
+    "summary_bullets": [
+      "Customer relocating permanently to Germany and wants to cancel motor policy TH-CAR-55102 effective March 31",
+      "Asking about cancellation process, required documents, pro-rata refund eligibility, and refund timeline",
+      "Customer has paid an annual premium — likely eligible for a partial refund",
+      "Straightforward cancellation request with a clear effective date"
+    ],
+    "category": "General",
+    "priority": "P2",
+    "suggested_action": "Confirm cancellation process and required documents, calculate the pro-rata refund amount for TH-CAR-55102, and advise on the refund timeline.",
+    "draft_reply": "Dear Khun Ploy,\n\nThank you for letting us know, and best wishes for your move to Germany!\n\nRegarding your motor policy TH-CAR-55102 cancellation effective March 31, 2026:\n\n1. Process: Please complete the cancellation request form (attached) and return it signed\n2. Required documents: A copy of your passport/ID and proof of departure (e.g. flight booking or visa) if available\n3. Refund: Yes, you are eligible for a pro-rata refund for the unused portion of your annual premium. I will calculate the exact amount once the cancellation form is received\n4. Timeline: Refund is processed within 15 business days of the cancellation effective date and returned to your original payment method\n\nPlease reply with the completed form at your earliest convenience so we can have everything processed before March 31.\n\nSafe travels,\nQoala Support Team",
+    "confidence": 0.78
+  },
+  {
+    "id": "itm_009",
+    "summary_bullets": [
+      "Customer is formally disputing a rejected claim (CLM-2026-04421) on grounds of alleged drunk driving",
+      "Customer denies the allegation and states no alcohol test was conducted per the police report",
+      "Two witnesses are available; customer is threatening legal action if not addressed within 48 hours",
+      "Tone is highly escalated — requires urgent senior case review"
+    ],
+    "category": "Claims",
+    "priority": "P1",
+    "suggested_action": "Escalate immediately to a senior claims manager, request the original rejection file and police report, and acknowledge the dispute within 24 hours to prevent legal escalation.",
+    "draft_reply": "Dear Khun Suwan,\n\nThank you for writing to us regarding claim CLM-2026-04421. I understand how distressing this situation must be, and I want to assure you that your dispute is being taken seriously.\n\nI have escalated your case to our Senior Claims Review team, who will independently re-examine the rejection decision, the police report, and any supporting evidence including witness statements.\n\nTo support your dispute, please provide:\n1. A copy of the police report confirming no alcohol test was conducted\n2. Names and contact details of your two witnesses\n3. Any other documentation you believe is relevant\n\nYou can send these to disputes@qoala.co.th quoting CLM-2026-04421. A senior case manager will contact you directly within 24 hours.\n\nWe are committed to a fair and transparent review process.\n\nSincerely,\nQoala Senior Claims Team",
+    "confidence": 0.82
+  },
+  {
+    "id": "itm_010",
+    "summary_bullets": [
+      "Customer requests to add spouse Krit Apinya as an additional driver on motor policy TH-CAR-34901",
+      "New driver details provided: DOB June 14, 1988 and driver's license number",
+      "Customer asks about additional premium and required documents",
+      "Case is marked Done — endorsement likely processed"
+    ],
+    "category": "Endorsement",
+    "priority": "P1",
+    "suggested_action": "Confirm the endorsement has been processed, share the updated policy schedule and any additional premium charged.",
+    "draft_reply": "Dear Khun Noon,\n\nThank you for your request to add Mr. Krit Apinya as an additional driver on policy TH-CAR-34901.\n\nWe are pleased to confirm that the endorsement has been processed. Details:\n- Additional driver: Mr. Krit Apinya, DOB June 14, 1988\n- License: 12-3456789-01\n- Additional premium: [amount] ฿ (pro-rated to your next renewal)\n\nAn updated policy schedule reflecting this change has been sent to your registered email address.\n\nPlease do not hesitate to contact us if you need any further changes.\n\nKind regards,\nQoala Support Team",
+    "confidence": 0.94
+  },
+  {
+    "id": "itm_011",
+    "summary_bullets": [
+      "Fraudulent email promising a fictitious ฿50,000 insurance upgrade prize",
+      "Requests sensitive information including policy number, national ID, and bank account details",
+      "Sender domain 'prizecenter.net' is unrelated to any legitimate insurance entity",
+      "Classic advance-fee and identity theft scam — no legitimate customer behind this message"
+    ],
+    "category": "Spam",
+    "priority": "P3",
+    "suggested_action": "Mark as spam, block sender, and do not engage. If a real customer forwarded this, warn them not to respond or share personal details.",
+    "draft_reply": "This message has been identified as a fraudulent scam email. No reply will be sent. Sender has been blocked and the message logged for spam records.",
+    "confidence": 0.99
+  },
+  {
+    "id": "itm_012",
+    "summary_bullets": [
+      "Father of customer (Prasit Wongsuphan) admitted for emergency appendix surgery at Bangkok Hospital",
+      "Policy TH-HLT-10032; hospital is a network provider and cashless authorisation is required immediately",
+      "Patient is in pre-op — authorisation code needed urgently before procedure proceeds",
+      "Customer reachable via chat or phone +66 89 876 5432"
+    ],
+    "category": "Urgent",
+    "priority": "P1",
+    "suggested_action": "Immediately verify policy TH-HLT-10032 network eligibility and issue a cashless authorisation code to Bangkok Hospital's billing department. Call the customer if chat response is delayed.",
+    "draft_reply": "Dear Khun Kanya,\n\nI understand the urgency — please be assured we are acting on this right now.\n\nI am verifying policy TH-HLT-10032 and confirming Bangkok Hospital's network status. A cashless authorisation code will be communicated directly to the hospital's billing department within the next 15 minutes.\n\nYou will also receive a confirmation on this chat as soon as the authorisation is issued.\n\nIf there are any delays, please call our 24/7 urgent line: 02-XXX-XXXX and quote policy TH-HLT-10032.\n\nWishing your father a smooth and speedy recovery.\n\nQoala Health Claims — Urgent Team",
+    "confidence": 0.96
+  },
+  {
+    "id": "itm_013",
+    "summary_bullets": [
+      "Customer enquiring whether a 3-year no-claims discount is applied automatically on renewal of policy TH-CAR-28833",
+      "Also asking whether the no-claims history is portable if they switch insurers",
+      "Straightforward general query with no urgency; case is marked Done",
+      "April renewal is approaching — good opportunity to confirm loyalty benefits"
+    ],
+    "category": "General",
+    "priority": "P2",
+    "suggested_action": "Confirm no-claims discount application method and portability policy, and share renewal quote with discount already applied.",
+    "draft_reply": "Dear Khun Prem,\n\nThank you for your question about your no-claims discount on policy TH-CAR-28833.\n\nGood news — your 3-year no-claims discount is applied automatically at renewal and will already be reflected in the renewal quote you receive. You do not need to request it separately.\n\nRegarding portability: yes, your no-claims history can be transferred to another insurer. You would need to request a No-Claims Certificate from us, which we issue free of charge. Most Thai insurers will honour it, though the discount percentage may vary by provider.\n\nYour April renewal quote will be sent to you shortly with the discount applied. Let us know if you have any further questions.\n\nKind regards,\nQoala Support Team",
+    "confidence": 0.83
+  },
+  {
+    "id": "itm_014",
+    "summary_bullets": [
+      "Customer hospitalised in Tokyo (March 8–12) with acute gastroenteritis; medical bills total JPY 180,000 (~฿45,000)",
+      "Covered under travel policy TH-TRV-00812; all supporting documents are available (discharge summary, invoice, passport stamps, receipt)",
+      "Customer has already returned to Thailand and is seeking reimbursement",
+      "Claim is well-documented — straightforward reimbursement case"
+    ],
+    "category": "Claims",
+    "priority": "P1",
+    "suggested_action": "Acknowledge the claim, confirm reimbursement eligibility under TH-TRV-00812, and provide the document submission portal link or email address.",
+    "draft_reply": "Dear Khun Ratchanok,\n\nThank you for notifying us and I'm glad you've made a full recovery.\n\nI can confirm that emergency medical expenses are covered under your travel policy TH-TRV-00812. Based on the documents you've described, your claim appears well-supported.\n\nPlease submit the following to claims@qoala.co.th quoting your policy number:\n1. Hospital discharge summary (English)\n2. Itemised invoice from Keio University Hospital\n3. Proof of travel (passport page with Japan entry/exit stamps)\n4. Credit card receipt for hospital payment\n\nOnce received, we will assess the claim and process reimbursement within 10 business days. Reimbursement will be in Thai Baht at the exchange rate on the date of treatment.\n\nWarm regards,\nQoala Travel Claims Team",
+    "confidence": 0.89
+  },
+  {
+    "id": "itm_015",
+    "summary_bullets": [
+      "Farmer in Chiang Rai asking whether current drought conditions qualify for a claim under his crop insurance drought clause",
+      "Policy TH-AGR-00301 covers 15 rai of rice farmland",
+      "Customer is not yet filing a claim — wants guidance on eligibility and documentation requirements",
+      "Proactive and reasonable enquiry; low urgency but requires product knowledge"
+    ],
+    "category": "General",
+    "priority": "P2",
+    "suggested_action": "Review policy TH-AGR-00301 drought clause trigger conditions, check whether Chiang Rai is under a declared drought advisory, and advise the customer on eligibility and what documentation to begin gathering.",
+    "draft_reply": "Dear Khun Daeng,\n\nSawadee Krap — thank you for reaching out proactively before filing a formal claim.\n\nUnder most agricultural policies, drought coverage is triggered by a combination of: (1) a government or meteorological agency declaration of drought conditions in the covered area, and (2) measurable crop yield loss assessed by an approved agronomist.\n\nFor your policy TH-AGR-00301, I am checking the specific drought clause trigger conditions and whether the Chiang Rai region currently qualifies under the applicable weather advisory. I will revert to you within 2 business days.\n\nIn the meantime, I recommend you begin gathering:\n- Rainfall records or local weather station data for the past 60–90 days\n- Photographic evidence of current crop condition\n- Any local government drought advisory notices\n\nThis will put you in a strong position if a formal claim becomes appropriate.\n\nKind regards,\nQoala Agricultural Claims Team",
+    "confidence": 0.44
+  },
+  {
+    "id": "itm_016",
+    "summary_bullets": [
+      "Corporate fleet customer with 23 vehicles (ACC-FLEET-0042) due for renewal on April 1",
+      "Previous account manager Khun Praewa has left; customer needs a new account manager assigned",
+      "Customer also wants to add roadside assistance as a standard fleet add-on",
+      "Renewal quotes for all 23 vehicles are required urgently given the April 1 deadline"
+    ],
+    "category": "Endorsement",
+    "priority": "P2",
+    "suggested_action": "Assign a new corporate account manager to ACC-FLEET-0042, prepare renewal quotes for all 23 vehicles including roadside assistance pricing, and send to the customer before March 25.",
+    "draft_reply": "Dear Khun Jirapat,\n\nThank you for getting in touch, and I'm sorry for any disruption caused by the account manager change.\n\nI'm pleased to confirm that a new dedicated account manager has been assigned to your fleet account ACC-FLEET-0042. They will introduce themselves and be your primary point of contact from today.\n\nRegarding your April 1 renewal:\n- Renewal quotes for all 23 vehicles are being prepared and will be sent to you by March 22\n- Roadside assistance pricing as a fleet-wide add-on will be included in the quote package for your review\n\nIf you have an updated vehicle schedule or any changes to coverage requirements, please share these at your earliest convenience so we can reflect them accurately.\n\nKind regards,\nQoala Corporate Accounts Team",
+    "confidence": 0.76
+  },
+  {
+    "id": "itm_017",
+    "summary_bullets": [
+      "Burst pipe in kitchen on March 14 caused water damage to flooring, cabinetry, and living room ceiling below",
+      "Policy TH-HOM-44102; customer unsure whether this falls under 'sudden and accidental' or 'water damage' clause",
+      "Customer asking if coverage applies, which assessor to use, and whether repairs can begin before inspection",
+      "Proactive and well-organised message — customer has photos and videos ready"
+    ],
+    "category": "Claims",
+    "priority": "P2",
+    "suggested_action": "Confirm that burst pipe damage is covered under TH-HOM-44102, advise the customer to wait for a loss adjuster inspection before commencing structural repairs, and initiate the claims process.",
+    "draft_reply": "Dear Khun Supatra,\n\nThank you for getting in touch so promptly and for the detailed information.\n\nTo answer your questions:\n\n1. Coverage: Burst pipe damage of this nature typically falls under 'sudden and accidental water damage' and is covered under standard home insurance policies. I am confirming this against the specific terms of TH-HOM-44102 and will update you within a few hours.\n\n2. Assessor: We will appoint a licensed loss adjuster who will contact you to arrange an inspection — you do not need to source your own assessor.\n\n3. Repairs: Please do not commence any structural repairs until after the adjuster's inspection, as this may affect the claim. However, you may take emergency measures to prevent further damage (e.g. drying, covering exposed areas) and these costs may be claimable.\n\nI am registering your claim now. Please email your photos and video evidence to claims@qoala.co.th quoting policy TH-HOM-44102.\n\nKind regards,\nQoala Home Claims Team",
+    "confidence": 0.68
+  },
+  {
+    "id": "itm_018",
+    "summary_bullets": [
+      "Phishing email impersonating Qoala IT department, requesting agents to re-enter login credentials via a fake portal",
+      "Sender domain 'fakeqoala-portal.com' is a spoofed domain with no affiliation to Qoala",
+      "Uses social engineering — threats of account lockout to create urgency",
+      "High risk: targets internal staff credentials; should be escalated to IT security immediately"
+    ],
+    "category": "Spam",
+    "priority": "P2",
+    "suggested_action": "Flag immediately to IT Security and the CISO. Broadcast an internal alert warning staff not to click the link. Block the spoofed domain and initiate a domain abuse takedown request.",
+    "draft_reply": "This message is an internal-spoofing phishing attempt targeting Qoala staff credentials. No reply to the sender. Escalated to IT Security team for immediate action — domain blocking, staff alert, and takedown request to be initiated.",
+    "confidence": 0.97
+  },
+  {
+    "id": "itm_019",
+    "summary_bullets": [
+      "Customer is 38 weeks pregnant with a C-section scheduled for March 25 at Samitivej Hospital",
+      "Pre-authorisation required under health policy TH-HLT-29301; hospital needs 5 working days notice",
+      "OB's office claims to have faxed the medical necessity form last week — receipt unconfirmed",
+      "Time-critical: authorisation must be issued by approximately March 18 to meet the hospital's deadline"
+    ],
+    "category": "Urgent",
+    "priority": "P2",
+    "suggested_action": "Locate the faxed medical necessity form from the OB's office, verify policy TH-HLT-29301 maternity coverage, and issue the pre-authorisation code to Samitivej Hospital today.",
+    "draft_reply": "Dear Khun Oranuch,\n\nThank you for writing and congratulations on your upcoming arrival! I completely understand the urgency here.\n\nI am checking our records now for the medical necessity form faxed by your OB's office. If we have received it, I will process the pre-authorisation today. If it has not come through, I will contact your OB's office directly to request a resend.\n\nGiven the March 25 procedure date and the hospital's 5-working-day requirement, I am treating this as a priority and will have an update for you within 2 hours.\n\nA pre-authorisation reference number will be communicated both to you and directly to Samitivej Hospital's billing department once issued.\n\nPlease feel free to call our urgent line at 02-XXX-XXXX if you need an immediate update.\n\nWarm wishes,\nQoala Health Team",
+    "confidence": 0.85
+  },
+  {
+    "id": "itm_020",
+    "summary_bullets": [
+      "Child (age 12, Policy TH-STU-00741) broke his arm during school sports day on March 8 and had same-day surgery",
+      "Total medical cost is ฿28,500; claim form and bills submitted online (ref: ONL-2026-7821)",
+      "Status shows 'under review' on the portal; customer asking for a timeline estimate",
+      "Case is marked Done — likely resolved"
+    ],
+    "category": "Claims",
+    "priority": "P3",
+    "suggested_action": "Confirm claim ONL-2026-7821 status and advise customer of the expected settlement timeline and payment method.",
+    "draft_reply": "Dear Khun Teerasak,\n\nThank you for following up on Nat's claim. I hope he is recovering well!\n\nI can confirm that claim ONL-2026-7821 has been received and all documents are in order. The 'under review' status means a claims assessor is currently reviewing the submitted bills against the policy terms — this is a standard step.\n\nFor student accident policies, the typical review and settlement timeline is 7–10 business days from the date all documents are received. Based on your submission, you can expect a decision by approximately March 20–21, with payment to your registered bank account within 5 business days of approval.\n\nYou will receive an SMS and email notification once the claim is approved.\n\nThank you for your patience.\n\nKind regards,\nQoala Claims Team",
+    "confidence": 0.9
+  },
+  {
+    "id": "itm_021",
+    "summary_bullets": [
+      "High-value cargo theft: electronics worth ฿2,300,000 stolen from an abandoned truck near Saraburi on March 15–16",
+      "Police report filed (Case No. 0412/2026, Saraburi Police Station); driver found unharmed",
+      "Cargo policy TH-CGO-00188; client of the insured is demanding compensation",
+      "Urgent loss adjuster appointment needed; time-sensitive given the commercial pressure from the end client"
+    ],
+    "category": "Claims",
+    "priority": "P1",
+    "suggested_action": "Acknowledge the claim immediately, assign a loss adjuster to attend the Saraburi scene and review police documentation, and notify the reinsurance team given the high claim value.",
+    "draft_reply": "Dear Khun Kasem,\n\nThank you for the urgent notification. I am very sorry to hear about the theft — I am glad the driver is safe.\n\nI have registered a high-priority claim under cargo policy TH-CGO-00188. A loss adjuster will be assigned within the next 4 hours and will contact you directly to coordinate the scene review and police report documentation.\n\nIn the meantime, please:\n1. Preserve all vehicle and scene evidence and co-operate with the police investigation\n2. Provide a detailed cargo manifest and proof of value (purchase invoices) for the stolen goods\n3. Share the full police report (Case No. 0412/2026) digitally to claims@qoala.co.th\n\nGiven the ฿2,300,000 claim value, this has been escalated to our senior claims division.\n\nWe will provide your client with a formal acknowledgement letter for their records upon request.\n\nSincerely,\nQoala Cargo Claims Team",
+    "confidence": 0.88
+  },
+  {
+    "id": "itm_022",
+    "summary_bullets": [
+      "Customer's name is misspelled on the policy certificate: 'Lalitha' instead of the correct 'Lalita'",
+      "Policy TH-HLT-38821; customer wants a corrected certificate issued",
+      "Low urgency — no impact on current coverage; customer wants it fixed before needing to use the insurance",
+      "Simple administrative correction with no premium or coverage implications"
+    ],
+    "category": "Endorsement",
+    "priority": "P3",
+    "suggested_action": "Verify the correct legal name against the customer's ID on file, process a name correction endorsement on TH-HLT-38821, and reissue the certificate.",
+    "draft_reply": "Hi Khun Lalita,\n\nThank you for letting us know — we apologise for the typo on your certificate!\n\nI have raised a name correction endorsement on policy TH-HLT-38821 to update the spelling from 'Lalitha' to 'Lalita'. To process this, could you please confirm your full legal name as it appears on your national ID or passport? This ensures the corrected certificate matches your official documents.\n\nOnce confirmed, a corrected certificate will be issued and sent to your registered email within 2 business days at no charge.\n\nThanks again for flagging this!\n\nKind regards,\nQoala Support Team",
+    "confidence": 0.95
+  },
+  {
+    "id": "itm_023",
+    "summary_bullets": [
+      "Property developer seeking comprehensive fire insurance for a 6-storey commercial building in Silom (4,800 sqm, value ~฿180M)",
+      "Coverage required: structural fire, business interruption, public liability, and common area contents",
+      "Current coverage with a competitor expires April 30 — quote needed before then",
+      "High-value new business opportunity; site survey may be required before quoting"
+    ],
+    "category": "General",
+    "priority": "P2",
+    "suggested_action": "Route to the commercial underwriting team, arrange a site survey, and prepare a comprehensive quote package before April 15 to allow time for the customer to review before their April 30 expiry.",
+    "draft_reply": "Dear Khun Nattawut,\n\nThank you for considering Qoala for your Silom commercial property — this sounds like a significant and well-considered insurance programme.\n\nI have passed your enquiry to our Commercial Property Underwriting team, who specialise in exactly this type of risk. They will reach out within 2 business days to discuss your requirements in detail and arrange a site survey if required before finalising the quote.\n\nFor your reference, the coverage areas you have outlined — structural fire, business interruption for 12 tenants, public liability, and common area contents — are all within our commercial property product suite.\n\nGiven your existing policy expires April 30, we will prioritise getting you a quote by April 10 to allow sufficient time for review.\n\nLooking forward to working with you.\n\nKind regards,\nQoala Commercial Business Development Team",
+    "confidence": 0.58
+  },
+  {
+    "id": "itm_024",
+    "summary_bullets": [
+      "Fraudulent survey email promising a free insurance policy worth ฿30,000 in exchange for personal and financial details",
+      "Requests national ID, date of birth, current insurer name, and bank account — classic identity theft vector",
+      "Sender domain 'survey-rewards99.com' is unrelated to any legitimate insurance entity",
+      "No real customer or legitimate business enquiry behind this message"
+    ],
+    "category": "Spam",
+    "priority": "P3",
+    "suggested_action": "Mark as spam and block sender. No reply needed. If forwarded by a real customer as a warning, thank them and confirm Qoala will never request bank details via unsolicited survey links.",
+    "draft_reply": "This message has been identified as a fraudulent phishing survey. No reply will be sent. Sender blocked and logged.",
+    "confidence": 0.99
+  },
+  {
+    "id": "itm_025",
+    "summary_bullets": [
+      "Network hospital (Bangkok Health Group) disputing batch rejection of 47 health claims worth ฿1,840,000",
+      "Rejection reason is 'policy not active' but hospital has confirmed all employees were covered in the February period",
+      "Likely a system sync or data feed issue on the insurer's side",
+      "Hospital threatens OIC escalation if not resolved within 5 business days"
+    ],
+    "category": "Claims",
+    "priority": "P1",
+    "suggested_action": "Escalate to the health claims operations and IT teams immediately to investigate the policy active status sync error. Assign a senior case manager and respond to the hospital within 24 hours to prevent OIC escalation.",
+    "draft_reply": "Dear Khun Siriwan,\n\nThank you for bringing this to our attention. We sincerely apologise for the disruption this batch rejection has caused.\n\nI have escalated this matter urgently to our Health Claims Operations team and our technical team who manage provider data feeds. The 'policy not active' rejection on employee policies that were demonstrably active in February points to a system synchronisation issue that we take very seriously.\n\nA senior case manager has been assigned to your account (Provider ID: BHG-0021) and will contact you within 24 hours with an update.\n\nWe are committed to resolving this within your 5 business day window and will provide a formal written response to each of the 47 claims. We do not wish this matter to escalate, and we will work transparently with your team to reach a resolution.\n\nKind regards,\nQoala Health Operations — Provider Relations",
+    "confidence": 0.71
+  },
+  {
+    "id": "itm_026",
+    "summary_bullets": [
+      "Customer planning a 3-month trip to Europe (May–July) and wants to suspend or reduce motor policy TH-CAR-61002 to save on premiums",
+      "Car will be stationary and undriven at parents' home during this period",
+      "Customer does not want to fully cancel and is concerned about losing no-claims discount",
+      "General product query — suspension options vary by policy terms"
+    ],
+    "category": "General",
+    "priority": "P3",
+    "suggested_action": "Review TH-CAR-61002 policy terms for lay-up or suspension clauses, advise the customer on available options, premium savings, and the impact (if any) on their no-claims discount.",
+    "draft_reply": "Hi Khun Pornchai,\n\nWhat an exciting trip ahead!\n\nRegarding your motor policy TH-CAR-61002 while you're away:\n\nSome policies allow a 'lay-up' period where third-party and theft coverage is retained (protecting your parked vehicle) while collision/comprehensive cover is suspended, reducing your premium for the duration. However, this option is subject to your specific policy terms and generally requires the vehicle to be kept off public roads.\n\nI am reviewing TH-CAR-61002 now and will confirm within 1 business day:\n1. Whether a lay-up or suspension option is available\n2. The premium saving for a 3-month period\n3. Whether it affects your no-claims discount (in most cases, a formal lay-up does not)\n\nAs a general note — fully cancelling and re-buying is rarely the most cost-effective option and can affect your NCB, so a suspension is usually the better path.\n\nSpeak soon!\n\nKind regards,\nQoala Support Team",
+    "confidence": 0.49
+  },
+  {
+    "id": "itm_027",
+    "summary_bullets": [
+      "GP setting up a private clinic in Chiang Mai requires professional indemnity (medical malpractice) insurance",
+      "Coverage needed: ฿10M per claim, ฿30M annual aggregate; solo practice with ~30 patients/day",
+      "Clean 7-year claims history in a hospital setting; license approval expected next month",
+      "New business opportunity — time-sensitive given the license approval timeline"
+    ],
+    "category": "General",
+    "priority": "P2",
+    "suggested_action": "Route to the professional indemnity underwriting team for a quote. Request the proposal form be sent to Dr. Amara and target a quote turnaround of 5 business days.",
+    "draft_reply": "Dear Dr. Amara,\n\nThank you for reaching out — congratulations on setting up your own practice in Chiang Mai!\n\nProfessional indemnity insurance for medical practitioners is well within our product range. Based on your requirements (฿10M per claim / ฿30M aggregate, solo GP, ~30 patients/day, clean claims history), I am routing your enquiry to our Professional Indemnity Underwriting team who will be in touch within 2 business days.\n\nIn the meantime, please complete the attached medical PI proposal form so our underwriters can prepare an accurate quote as efficiently as possible. Key items they will need include:\n- Scope of procedures (minor procedures detail)\n- Any prior claims or incidents, even if not formally claimed\n- Estimated annual patient volume\n\nWe look forward to supporting your new practice.\n\nKind regards,\nQoala Professional Lines Team",
+    "confidence": 0.63
+  },
+  {
+    "id": "itm_028",
+    "summary_bullets": [
+      "Contractor's All Risks policy TH-CAR-CON-00542 for a Lat Krabang warehousing project expires March 31",
+      "Project delayed by monsoon; new completion date is June 30, 2026 — 3-month extension required",
+      "No claims made on the policy; original contract value ฿45,000,000",
+      "Main contractor requires an updated certificate by March 22 — urgent endorsement needed"
+    ],
+    "category": "Endorsement",
+    "priority": "P2",
+    "suggested_action": "Process a 3-month policy extension endorsement for TH-CAR-CON-00542, calculate the additional premium, confirm sub-contractor schedule of works remains covered, and issue an updated certificate before March 22.",
+    "draft_reply": "Dear Khun Chalermchai,\n\nThank you for the advance notice on the project extension — I understand the March 22 certificate deadline is pressing.\n\nI am processing a 3-month extension endorsement on policy TH-CAR-CON-00542 from April 1 to June 30, 2026. The additional premium for the extension period will be calculated and confirmed to you within 24 hours.\n\nRegarding the sub-contractor schedule of works: provided there are no material changes to the scope, sub-contractors named in the original policy schedule remain covered through the extension period. Please let me know if any new sub-contractors have been added, as these would need to be declared.\n\nAn updated certificate of insurance reflecting the new expiry date will be issued as soon as the extension premium is confirmed — we will prioritise this to meet your March 22 deadline.\n\nKind regards,\nQoala Commercial Lines Team",
+    "confidence": 0.86
+  },
+  {
+    "id": "itm_029",
+    "summary_bullets": [
+      "Customer's car was hit and damaged in a parking lot hit-and-run at Central Ladprao on March 12",
+      "Offending vehicle's plate not identifiable from CCTV footage; claiming under own collision coverage on policy TH-CAR-20041",
+      "Police report filed (Ladprao Station, report 0188/2026); Honda service repair estimate is ฿34,500",
+      "Customer requesting a vehicle inspection to proceed with the claim"
+    ],
+    "category": "Claims",
+    "priority": "P1",
+    "suggested_action": "Acknowledge the claim, confirm own-damage collision coverage under TH-CAR-20041, arrange a vehicle inspection appointment, and advise on the excess payable.",
+    "draft_reply": "Dear Khun Patchara,\n\nI'm sorry to hear about the hit-and-run — how frustrating, especially when the other party cannot be identified.\n\nI have registered your claim under policy TH-CAR-20041. Since the third party cannot be traced, this will be processed under your own collision (own-damage) coverage.\n\nNext steps:\n1. A vehicle inspection will be arranged at an approved Qoala network garage — you will receive an appointment confirmation within 1 business day\n2. Please bring the police report (Ladprao Station, ref 0188/2026) and the Honda service estimate (฿34,500) to the inspection\n3. Your policy excess will be confirmed in the inspection appointment letter\n\nIf you would like to use the Honda authorised service centre directly, please let us know and we can check if it is a network repairer.\n\nKind regards,\nQoala Motor Claims Team",
+    "confidence": 0.84
+  },
+  {
+    "id": "itm_030",
+    "summary_bullets": [
+      "Customer delivered a son (Oliver, born March 10) and wants to add him as a dependent on expat health policy TH-EXP-00431",
+      "Also querying whether ฿185,000 delivery costs at Bumrungrad are covered under the maternity benefit",
+      "Asking about premium increase for adding a child dependent and paediatric coverage at Samitivej Children's Hospital",
+      "Multi-part endorsement and claims query — sensitive and time-bound (newborn coverage typically backdated to birth)"
+    ],
+    "category": "Endorsement",
+    "priority": "P2",
+    "suggested_action": "Add Oliver Lim as a dependent on TH-EXP-00431 backdated to March 10, confirm maternity benefit coverage for the Bumrungrad delivery, and advise on paediatric network coverage at Samitivej.",
+    "draft_reply": "Dear Vanessa,\n\nCongratulations on the arrival of Oliver!\n\nI am processing the addition of Oliver Lim (DOB March 10, 2026) as a dependent on policy TH-EXP-00431, backdated to his date of birth as is standard practice for newborns.\n\nTo answer your questions:\n\n1. Delivery costs: I am reviewing the maternity benefit under your policy. Bumrungrad Hospital is a network provider and delivery costs are typically covered up to the policy's maternity benefit limit. I will confirm the exact applicable limit and any co-pay within 4 hours.\n\n2. Premium for dependent child: Adding a child dependent will result in an additional premium which will be calculated and confirmed alongside the endorsement paperwork.\n\n3. Paediatric coverage: Samitivej Children's Hospital is a network provider under your expat health policy, so Oliver's check-ups there will be covered subject to the standard outpatient terms.\n\nFull confirmation documents will be sent to your registered email by end of business today.\n\nWarm regards,\nQoala Expat Health Team",
+    "confidence": 0.77
+  },
+  {
+    "id": "itm_031",
+    "summary_bullets": [
+      "14 cattle died between March 8–11 on a Nakhon Si Thammarat farm, suspected food poisoning from contaminated feed",
+      "Insured value: ฿560,000 (14 × ฿40,000); policy TH-LVS-00089",
+      "Veterinary report in preparation; carcass disposal required by health regulation by March 18",
+      "Field assessor must attend before March 18 or evidence will be lost — extremely time-sensitive"
+    ],
+    "category": "Claims",
+    "priority": "P1",
+    "suggested_action": "Dispatch a field assessor to the Nakhon Si Thammarat farm urgently — must attend before March 18. Instruct the farmer to preserve evidence and prepare the contaminated feed samples for analysis.",
+    "draft_reply": "Dear Khun Sombat,\n\nThank you for notifying us immediately. I understand the urgency given the March 18 disposal deadline.\n\nI am dispatching a field assessor to your farm in Nakhon Si Thammarat as a matter of urgency. The assessor will contact you today on +66 77 123 4567 to confirm the exact visit time — the aim is to attend within 48 hours and before the regulatory disposal deadline.\n\nWhile you wait for the assessor, please:\n1. Do not dispose of any carcasses until the assessor has attended and documented them\n2. Preserve a sample of the feed suspected to have caused the poisoning, stored separately\n3. Keep the veterinary report as the primary claim evidence once ready\n\nWe have registered your claim under policy TH-LVS-00089 and it is being handled by our Agricultural Claims specialists.\n\nSincerely,\nQoala Agricultural Claims Team",
+    "confidence": 0.92
+  },
+  {
+    "id": "itm_032",
+    "summary_bullets": [
+      "Subrogation recovery on file SBR-2025-0044: partial recovery of ฿78,000 received from AXA Thailand out of a ฿145,000 claim",
+      "AXA is disputing the remaining ฿67,000 citing contributory negligence",
+      "Legal counsel is asking whether Qoala wants to proceed to arbitration or accept the partial recovery",
+      "Commercial decision required from the claims/legal team on the cost-benefit of arbitration"
+    ],
+    "category": "Claims",
+    "priority": "P2",
+    "suggested_action": "Route to the subrogation/legal team for a cost-benefit assessment of arbitration vs settlement. A decision should be communicated to the external legal counsel within 5 business days.",
+    "draft_reply": "Dear Khun Monthon,\n\nThank you for the update on subrogation file SBR-2025-0044.\n\nConfirmed receipt of the ฿78,000 partial recovery from AXA Thailand. I am escalating the decision on the remaining ฿67,000 to our Subrogation and Legal team for a cost-benefit review of proceeding to arbitration versus accepting the partial settlement.\n\nWe will revert to you with a formal instruction within 5 business days. In the meantime, please take no further action on the disputed balance.\n\nThank you for your diligence in pursuing this matter.\n\nKind regards,\nQoala Legal & Subrogation Team",
+    "confidence": 0.67
+  },
+  {
+    "id": "itm_033",
+    "summary_bullets": [
+      "Medical emergency: customer's husband collapsed in Koh Samui with a cardiac condition requiring surgery unavailable locally",
+      "Patient is stabilised at Koh Samui Hospital; medevac helicopter to Bangkok Heart Hospital is required immediately",
+      "Policy TH-TRV-04421; hospital billing is awaiting Qoala confirmation before arranging the medevac",
+      "Potentially life-threatening delay — every minute counts"
+    ],
+    "category": "Urgent",
+    "priority": "P1",
+    "suggested_action": "Immediately verify medevac coverage under TH-TRV-04421 and issue verbal/written authorisation to Koh Samui Hospital's billing department. Engage the medical assistance company if one is listed on the policy. Call the customer directly.",
+    "draft_reply": "Dear Nadia,\n\nI have seen your message and I am acting on this RIGHT NOW.\n\nI am verifying medevac coverage under policy TH-TRV-04421 and will issue authorisation to Koh Samui Hospital's billing department within the next few minutes. You should not have to wait.\n\nOur 24/7 emergency medical assistance line will also call you at +66 91 234 5678 immediately — please keep your phone available.\n\nEmergency Assistance Direct Line (available now): [number]\n\nPlease tell the hospital billing team that authorisation is being processed and they will receive confirmation within 15 minutes.\n\nWishing Dmitri a full and swift recovery. We are with you.\n\nQoala Emergency Response Team",
+    "confidence": 0.97
+  },
+  {
+    "id": "itm_034",
+    "summary_bullets": [
+      "Cosmetics retailer received a ฿200,000 compensation claim from a customer alleging a severe allergic reaction to a product bought on March 5",
+      "Retailer is covered under product liability policy TH-PLI-00210; no direct response has been made to the claimant yet",
+      "Retailer is asking whether it is covered, whether to respond directly, and how to initiate the claims process",
+      "Correct handling of initial contact is critical — direct admission or negotiation by the insured could prejudice the claim"
+    ],
+    "category": "Claims",
+    "priority": "P2",
+    "suggested_action": "Advise the retailer not to make any direct admission or offer to the claimant. Assign a liability claims handler to take over communications and formally register the third-party claim under TH-PLI-00210.",
+    "draft_reply": "Dear Khun Tanya,\n\nThank you for notifying us promptly — this is exactly the right thing to do before responding to the claimant.\n\nPlease follow this important guidance:\n\n1. Do not make any direct admission of liability, apology, or settlement offer to the claimant. This is standard procedure as it can prejudice our ability to defend the claim.\n2. Do not respond to the claimant's demand directly — we will handle all communications on your behalf from this point.\n\nI am registering this as a third-party product liability claim under policy TH-PLI-00210. A dedicated liability claims handler will be assigned and will contact you within 24 hours. They will need:\n- The customer's medical report\n- Batch and lot number of the product purchased\n- Any CCTV or purchase receipt from the Siam Paragon branch\n- Your product safety data sheet\n\nYou are covered — let us manage this for you.\n\nKind regards,\nQoala Liability Claims Team",
+    "confidence": 0.8
+  },
+  {
+    "id": "itm_035",
+    "summary_bullets": [
+      "Customer purchased a health policy online on February 24 (ref: WEB-2026-88421) but never received the policy document",
+      "No document received after 3 weeks; spam folder checked — nothing found",
+      "Customer needs the document for company HR records",
+      "Likely an email delivery failure at the time of issuance — administrative fix required"
+    ],
+    "category": "General",
+    "priority": "P3",
+    "suggested_action": "Locate the policy using the web purchase reference WEB-2026-88421, verify the email address used at purchase, and resend the policy document immediately.",
+    "draft_reply": "Hi Khun Jiraporn,\n\nI'm sorry the policy document hasn't reached you — three weeks is far too long to wait!\n\nI have located your policy using purchase reference WEB-2026-88421. I can see the document was generated at the time of purchase but it appears there may have been a delivery issue to jiraporn.w@gmail.com.\n\nI am resending your full policy document and certificate now. You should receive it within the next 15 minutes. Please check your inbox and spam folder.\n\nIf you still don't see it, please reply here and I will send it via an alternative method.\n\nApologies again for the delay!\n\nKind regards,\nQoala Support Team",
+    "confidence": 0.93
+  },
+  {
+    "id": "itm_036",
+    "summary_bullets": [
+      "Customer was denied boarding on TG676 Bangkok-London on March 14 due to overbooking despite holding a confirmed ticket",
+      "Rebooked on a flight 22 hours later; pre-paid hotel (GBP 320) and theatre booking (GBP 180) were lost as a result",
+      "Covered under travel policy TH-TRV-10041; Thai Airways provided a written denied boarding confirmation",
+      "Total claim value approx. GBP 500 (~฿22,000); well-documented case"
+    ],
+    "category": "Claims",
+    "priority": "P2",
+    "suggested_action": "Confirm trip disruption/denied boarding coverage under TH-TRV-10041 and advise the customer to submit the airline's written confirmation plus pre-paid expense receipts for reimbursement.",
+    "draft_reply": "Dear Khun Chatree,\n\nWhat a frustrating experience — I'm sorry this happened to you.\n\nGood news: trip disruption coverage under your travel policy TH-TRV-10041 typically covers pre-paid, non-refundable expenses lost as a direct result of denied boarding when you are not at fault. Your situation appears to meet these criteria.\n\nTo process your claim, please submit the following to claims@qoala.co.th quoting policy TH-TRV-10041:\n1. Thai Airways' written denied boarding confirmation\n2. Hotel booking confirmation and evidence it was non-refundable\n3. Theatre booking confirmation and evidence it was non-refundable\n4. Your original flight booking and the rebooked flight confirmation\n\nThe total claimable amount will be assessed in Thai Baht at the GBP/THB rate on March 14. Reimbursement is typically processed within 10 business days of receiving all documents.\n\nKind regards,\nQoala Travel Claims Team",
+    "confidence": 0.81
+  },
+  {
+    "id": "itm_037",
+    "summary_bullets": [
+      "School seeking group personal accident insurance for 85 students and 8 teachers for a trip to Kanchanaburi on April 3–5",
+      "Coverage required: accidental death/disability, medical expenses up to ฿100,000 per person, and emergency evacuation",
+      "Quote and policy wording needed by March 25",
+      "Case is marked Done — quote likely sent"
+    ],
+    "category": "General",
+    "priority": "P3",
+    "suggested_action": "Confirm the quote has been sent and check if the school has responded or needs any clarification before the March 25 deadline.",
+    "draft_reply": "Dear Khun Wipaporn,\n\nThank you for choosing Qoala to protect your students and staff on this trip.\n\nI can confirm we have prepared a group personal accident policy quote for 93 persons (85 students, 8 teachers) covering April 3–5, 2026 in Kanchanaburi. The quote includes:\n- Accidental death and permanent disability benefit\n- Medical expense coverage up to ฿100,000 per person\n- Emergency evacuation coverage\n\nThe full quote and policy wording have been sent to your registered email. Please review and let us know if you have any questions or require any adjustments.\n\nTo bind coverage before April 3, please confirm acceptance by March 25 and we will issue the group policy certificate and individual ID cards for each participant.\n\nKind regards,\nQoala Group Programmes Team",
+    "confidence": 0.88
+  },
+  {
+    "id": "itm_038",
+    "summary_bullets": [
+      "Active ransomware attack in progress: company systems encrypted since 6am on March 17 under cyber policy TH-CYB-00031",
+      "Attackers demanding USD 80,000 in Bitcoin; no response made yet",
+      "Customer needs immediate incident response, forensics team engagement, and guidance on ransom payment coverage",
+      "CTO is available in real-time — every minute of delay increases business impact"
+    ],
+    "category": "Urgent",
+    "priority": "P1",
+    "suggested_action": "Immediately activate cyber incident response under TH-CYB-00031. Patch through to the 24/7 cyber hotline and deploy the contracted incident response and forensics firm. Advise the customer not to pay the ransom or communicate with attackers until the IR team is engaged.",
+    "draft_reply": "URGENT — Cyber Incident Response Activated.\n\nDear Khun Manop / CTO,\n\nI have immediately activated your cyber incident response coverage under policy TH-CYB-00031.\n\nPlease take the following actions RIGHT NOW:\n\n1. DO NOT pay the ransom or communicate with the attackers yet — the IR team will advise on this once they assess the situation.\n2. DO NOT reboot or wipe any encrypted systems — forensic evidence must be preserved.\n3. Isolate all affected systems from the network if not already done.\n\nOur contracted cyber incident response partner is being engaged as we speak. An IR consultant will call your CTO within 15 minutes on the number provided on your chat.\n\n24/7 Cyber Incident Hotline: [number] — Quote policy TH-CYB-00031.\n\nRegarding ransom payment: this is assessed case-by-case by the IR team and may be covered under your policy subject to prior written approval. Do not pay without their sign-off.\n\nWe are with you on this.\n\nQoala Cyber Claims — Emergency Response",
+    "confidence": 0.96
+  },
+  {
+    "id": "itm_039",
+    "summary_bullets": [
+      "Customer accepted a ฿42,000 home contents settlement (CLM-2026-01882) but now believes they were underpaid by ~฿18,000",
+      "Policy states 'replacement cost basis' for electronics; customer was apparently paid on a depreciated value basis instead",
+      "Dispute is supported by the policy wording the customer has re-read",
+      "Settled claim — customer asking if it is too late to dispute"
+    ],
+    "category": "Claims",
+    "priority": "P2",
+    "suggested_action": "Review the original settlement calculation for CLM-2026-01882 against the replacement cost basis clause in the policy. If an underpayment is confirmed, issue a supplemental payment. Advise the customer that post-settlement disputes are accepted within the regulatory timeframe.",
+    "draft_reply": "Dear Khun Sunee,\n\nThank you for raising this — you are right to question it and it is not too late to do so.\n\nPost-settlement disputes are accepted within 30 days of the settlement date under Thai insurance regulations, so you are still within the window.\n\nI am pulling claim CLM-2026-01882 and reviewing the settlement calculation against the 'replacement cost basis' clause on page 4 of your policy. If the electronics were indeed settled on a depreciated value rather than replacement cost, this would be an error on our part and we will issue a supplemental payment for the difference.\n\nI will have a full review outcome for you within 3 business days and will contact you directly with the findings.\n\nThank you for reading your policy carefully — this is exactly the kind of check that ensures fair outcomes.\n\nKind regards,\nQoala Claims Review Team",
+    "confidence": 0.73
+  },
+  {
+    "id": "itm_040",
+    "summary_bullets": [
+      "Formal OIC complaint filed by a law firm on behalf of Ms. Duangkamol Srisuk regarding denial of critical illness claim",
+      "OIC Complaint Reference: OIC-2026-CLM-8821; written response required within 15 business days from March 16",
+      "Response deadline is approximately April 6, 2026 — fixed regulatory obligation",
+      "Compliance and legal teams must be notified immediately; failure to respond is a regulatory breach"
+    ],
+    "category": "Urgent",
+    "priority": "P1",
+    "suggested_action": "Immediately notify the Compliance, Legal, and Senior Claims teams. Assign the OIC response file to the regulatory affairs lead and initiate the internal case review for CLM denial on policy TH-HLT-44201 with a target response date of April 3.",
+    "draft_reply": "Dear Khun Arthit,\n\nThank you for this formal notification. We acknowledge receipt of the OIC complaint (Reference: OIC-2026-CLM-8821) on behalf of Ms. Duangkamol Srisuk.\n\nWe confirm that Qoala is aware of the 15 business day response deadline and we are fully committed to meeting our regulatory obligations.\n\nOur Compliance and Legal teams have been notified and a dedicated case file has been opened. We will conduct a thorough internal review of the critical illness claim denial under policy TH-HLT-44201 and submit a comprehensive written response to the OIC within the required timeframe.\n\nShould you require any interim updates or additional information from our side in the meantime, please do not hesitate to contact our Regulatory Affairs team directly at compliance@qoala.co.th.\n\nYours sincerely,\nQoala Regulatory Affairs & Legal Team",
+    "confidence": 0.95
+  },
+  {
+    "id": "itm_041",
+    "summary_bullets": [
+      "Property developer seeking a multi-line insurance programme for a ฿1.2B 240-unit condo project in Pattaya (completion Q4 2027)",
+      "Coverages required: CAR, Erection All Risks, Public and Employers Liability, and 10-year Latent Defects Insurance",
+      "Developer is exploring a direct insurer relationship — currently uses a broker",
+      "High-value, long-term new business opportunity requiring a corporate team meeting"
+    ],
+    "category": "General",
+    "priority": "P2",
+    "suggested_action": "Route to the Corporate and Construction underwriting team. Arrange a senior meeting with Khun Noppadon within 5 business days and prepare a programme overview document for the initial discussion.",
+    "draft_reply": "Dear Khun Noppadon,\n\nThank you for reaching out — this sounds like a significant project and we would very much welcome the opportunity to discuss a direct relationship with Chantara Developments.\n\nThe coverage programme you have outlined — CAR, Erection All Risks, Public and Employers Liability, and 10-year Latent Defects Insurance — is a comprehensive construction insurance stack that our Corporate and Construction division handles regularly.\n\nI am connecting you directly with our Head of Corporate Business Development, who will reach out within 2 business days to arrange a meeting at your convenience. We will come prepared with an overview of how we structure large-scale residential development programmes and indicative capacity.\n\nWe look forward to exploring this with you.\n\nKind regards,\nQoala Corporate Business Development",
+    "confidence": 0.52
+  },
+  {
+    "id": "itm_042",
+    "summary_bullets": [
+      "Customer has been charged twice for the same ฿3,200 health insurance premium on March 3 on policy TH-HLT-52201",
+      "Both charges show identical date and merchant name — likely a payment gateway duplication",
+      "Customer is requesting a refund of one charge and is able to provide bank screenshots",
+      "Straightforward billing error — should be resolved quickly to maintain trust"
+    ],
+    "category": "Billing",
+    "priority": "P2",
+    "suggested_action": "Verify the duplicate charge in the payment records for TH-HLT-52201 on March 3, confirm the overpayment, and initiate a refund of ฿3,200 to the customer's original payment method.",
+    "draft_reply": "Hi Khun Parichat,\n\nI'm very sorry about the double charge — this is not the experience we want for you.\n\nI have pulled up policy TH-HLT-52201 and can see two ฿3,200 charges on March 3. This appears to be a payment gateway duplication error. I am initiating a refund of ฿3,200 to your original payment method now.\n\nRefund timeline: 5–7 business days to appear on your bank statement, depending on your bank's processing time.\n\nNo need to send the screenshots — we can see both charges on our end. But do feel free to send them to billing@qoala.co.th if you'd like a copy of the refund confirmation for your own records.\n\nApologies again for the inconvenience!\n\nKind regards,\nQoala Billing Team",
+    "confidence": 0.97
+  },
+  {
+    "id": "itm_043",
+    "summary_bullets": [
+      "Container with USD 380,000 of electronic components fell ~3 metres during crane loading at Laem Chabang port on March 13",
+      "Shipping line MSC has issued a Mate's Receipt noting damage; Bureau Veritas surveyor attending the next day",
+      "Marine cargo policy TH-MRN-00421; consignee is a buyer in Germany",
+      "Insurer's own surveyor should attend jointly with Bureau Veritas — time-sensitive"
+    ],
+    "category": "Claims",
+    "priority": "P1",
+    "suggested_action": "Appoint a marine surveyor immediately to attend jointly with Bureau Veritas. Notify the reinsurance team given the USD 380,000 claim value and issue a claim acknowledgement to the insured.",
+    "draft_reply": "Dear Khun Rewat,\n\nThank you for the prompt notification. I have registered this as a priority marine cargo claim under policy TH-MRN-00421.\n\nA Qoala-appointed marine surveyor is being dispatched to Laem Chabang port to attend jointly with the Bureau Veritas surveyor. The surveyor will contact you directly to confirm the attendance time — the aim is to attend today or first thing tomorrow morning.\n\nIn the meantime, please:\n1. Ensure the damaged container is not moved, opened further, or disposed of until both surveyors have inspected it\n2. Obtain and preserve the original Bill of Lading, commercial invoice, and packing list\n3. Request a formal damage report from MSC in addition to the Mate's Receipt\n\nGiven the USD 380,000 cargo value, our senior marine claims team has been notified.\n\nKind regards,\nQoala Marine Claims Team",
+    "confidence": 0.91
+  },
+  {
+    "id": "itm_044",
+    "summary_bullets": [
+      "Customer's garden wall was damaged when a neighbour's tree fell during a storm; repair cost approximately ฿15,000",
+      "Customer is unsure whether to claim under storm damage or falling objects, or pursue the neighbour directly",
+      "Concerned about premium impact of making a claim",
+      "Policy TH-HOM-31002 — general coverage query requiring policy interpretation"
+    ],
+    "category": "General",
+    "priority": "P3",
+    "suggested_action": "Confirm coverage under TH-HOM-31002 for storm-related falling object damage, advise on the claims vs no-claims premium impact, and clarify the option of pursuing the neighbour under third-party liability.",
+    "draft_reply": "Hi Khun Jintana,\n\nGreat question — and the good news is you have a few options here.\n\n1. Your home policy: Damage from a tree falling in a storm typically falls under 'storm damage' or 'falling objects' — both of which are usually covered under standard home insurance. I am confirming the exact wording in policy TH-HOM-31002, but it is likely covered.\n\n2. Pursuing your neighbour: If the tree was dead, diseased, or previously reported as a risk, you may have grounds to claim from your neighbour's home liability coverage. However, if it was a healthy tree felled by an act of nature (storm), this is generally considered an act of God and your neighbour may not be liable.\n\n3. Premium impact: At ฿15,000, it is worth checking your policy excess first. If your excess is, say, ฿10,000, you would only recover ฿5,000 and making a claim could affect your renewal premium. I can check your excess and give you a clearer picture.\n\nI'll come back to you with the specific policy details within 24 hours so you can make an informed decision.\n\nKind regards,\nQoala Home Team",
+    "confidence": 0.57
+  },
+  {
+    "id": "itm_045",
+    "summary_bullets": [
+      "Tuk-tuk tour operator adding 3 new vehicles to fleet policy TH-FLT-00881 with Bangkok plates for tourist operations in Rattanakosin",
+      "Chassis numbers and vehicle codes provided; interim cover notes needed before Monday operations begin",
+      "Case is marked Done — endorsement and cover notes likely issued",
+      "Routine fleet endorsement, time-sensitive for Monday start"
+    ],
+    "category": "Endorsement",
+    "priority": "P3",
+    "suggested_action": "Confirm the 3 vehicles have been added to TH-FLT-00881 and that interim cover notes were issued before Monday.",
+    "draft_reply": "Dear Khun Somsak,\n\nSawadee Krap! Congratulations on the fleet expansion!\n\nI am pleased to confirm that all three tuk-tuks have been added to fleet policy TH-FLT-00881:\n1. TT-2026-001, Chassis TUK88210001\n2. TT-2026-002, Chassis TUK88210002\n3. TT-2026-003, Chassis TUK88210003\n\nInterim cover notes have been issued for all three vehicles and sent to your registered email. Your additional premium for the pro-rated period has been calculated and will be included in your next policy statement.\n\nAll three are ready for operations in the Rattanakosin area from Monday. Safe and happy touring!\n\nKind regards,\nQoala Fleet Team",
+    "confidence": 0.94
+  },
+  {
+    "id": "itm_046",
+    "summary_bullets": [
+      "Customer has just received a confirmed Stage 2 breast cancer diagnosis and holds a critical illness rider on life policy TH-LIF-29801",
+      "She is distressed and unsure of the process; treatment needs to begin soon and she needs financial support urgently",
+      "Asking to confirm coverage, required documents, and payment timeline",
+      "Highly sensitive situation requiring empathetic, clear, and fast response"
+    ],
+    "category": "Claims",
+    "priority": "P1",
+    "suggested_action": "Confirm critical illness coverage for breast cancer under TH-LIF-29801, provide a simplified claims document checklist, and assign a dedicated case manager to support the customer through the process with care.",
+    "draft_reply": "Dear Khun Chanida,\n\nThank you for reaching out to us, and please know that we are here for you during this time.\n\nFirst — yes, Stage 2 breast cancer is covered under the critical illness rider attached to your life policy TH-LIF-29801. You are entitled to a lump-sum benefit and we want to make this process as simple and quick as possible for you.\n\nHere is what you need to provide:\n1. Doctor's written confirmation of diagnosis with pathology report\n2. Hospital diagnosis certificate\n3. A completed critical illness claim form (I am attaching this now)\n4. A copy of your national ID\n\nOnce all documents are received, we target a decision within 7 business days and payment within 3 business days of approval.\n\nI am assigning you a dedicated case manager — Khun [Name] — who will call you within 24 hours and guide you personally through every step. You will not have to navigate this alone.\n\nPlease take good care of yourself. We will take care of the claim.\n\nWith warm regards,\nQoala Life & Health Claims Team",
+    "confidence": 0.9
+  },
+  {
+    "id": "itm_047",
+    "summary_bullets": [
+      "Worker Arthon Saelim (age 34) fell from scaffolding at a Thonburi construction site on March 15, sustaining a fractured pelvis",
+      "Currently in Siriraj Hospital ICU; stable but requires surgery and extended rehabilitation",
+      "Workers' compensation policy TH-WKC-00302; employer asking about claims form, wage replacement, medical limits, and Department of Labour notification",
+      "Serious workplace injury with regulatory notification obligations — multi-department action required"
+    ],
+    "category": "Claims",
+    "priority": "P1",
+    "suggested_action": "Acknowledge the claim urgently, provide the claims notification form, confirm weekly wage replacement and medical coverage limits under TH-WKC-00302, and advise on mandatory Department of Labour notification requirements.",
+    "draft_reply": "Dear Khun Kriangkrai,\n\nThank you for notifying us and I hope Mr. Arthon makes a full recovery.\n\nI have registered an urgent workers' compensation claim under policy TH-WKC-00302. Here are the answers to your questions:\n\n1. Claims notification form: attached to this email. Please complete and return within 48 hours.\n2. Wage replacement: Yes, weekly wage replacement benefit applies from the day following the incident, subject to medical confirmation of inability to work. Rate is [X]% of daily wage per the policy schedule.\n3. Medical expenses: Covered up to the medical expenses limit in your policy schedule. Siriraj Hospital is a government hospital and expenses will be covered directly — please ensure all invoices are submitted to us.\n4. Department of Labour notification: Yes, under Thai Labour Protection Act, a serious workplace injury (hospitalisation) must be notified to the Department of Labour Protection and Welfare within 15 days. We recommend doing this immediately.\n\nA dedicated claims handler will contact you by end of day.\n\nSincerely,\nQoala Workers' Compensation Claims Team",
+    "confidence": 0.88
+  },
+  {
+    "id": "itm_048",
+    "summary_bullets": [
+      "Unsolicited industry newsletter from insurancenews.co.th with OIC regulatory updates and market trend summaries",
+      "Not from a customer; not a spam or phishing attempt — just an unwanted subscription email",
+      "No action required on any insurance matter; sender provides an unsubscribe option",
+      "Low priority, no customer impact"
+    ],
+    "category": "Spam",
+    "priority": "P3",
+    "suggested_action": "Unsubscribe from the mailing list and archive. No customer reply needed.",
+    "draft_reply": "No reply needed. This is an unsolicited newsletter subscription. Unsubscribe from the mailing list and archive.",
+    "confidence": 0.98
+  },
+  {
+    "id": "itm_049",
+    "summary_bullets": [
+      "Retail store at MBK Center (Unit 3F-42) forcibly closed since March 15 due to fire in adjacent unit — not directly fire-damaged but affected by smoke and mandatory closure order",
+      "Revenue loss estimated at ฿85,000 per day; business interruption policy TH-BIN-00501 held",
+      "Customer asking whether forced closure due to neighbouring damage triggers BI coverage",
+      "Likely covered under 'denial of access' or 'adjacent premises' BI extension — needs verification"
+    ],
+    "category": "Claims",
+    "priority": "P1",
+    "suggested_action": "Urgently review the BI extension clauses in TH-BIN-00501 for 'denial of access' or 'adjacent premises' triggers. If confirmed covered, assign a loss adjuster and begin loss quantification given the ฿85,000/day exposure.",
+    "draft_reply": "Dear Khun Benjamas,\n\nThank you for notifying us promptly. I understand how serious this disruption is with the revenue impact accumulating daily.\n\nI am urgently reviewing policy TH-BIN-00501, specifically the business interruption extension clauses. Forced closure by authorities due to damage to adjacent premises — where your own property has not been directly damaged by fire — is typically addressed under a 'denial of access' or 'adjacent premises' extension. Smoke damage to inventory may also be a separate covered loss.\n\nI will confirm coverage within 4 hours. In the meantime, please:\n1. Obtain and preserve the mall management's written closure order\n2. Begin keeping a daily record of lost revenue and fixed costs (rent, utilities, staff salaries) that continue during closure\n3. Document the smoke damage to inventory with photos and an estimated value list\n\nA loss adjuster will be assigned today to begin quantifying the business interruption loss.\n\nKind regards,\nQoala Commercial Claims Team",
+    "confidence": 0.65
+  },
+  {
+    "id": "itm_050",
+    "summary_bullets": [
+      "Recently married customer wants to update beneficiary on life policy TH-LIF-18820 from his mother to his wife Nisa Chaiyo",
+      "Wife's national ID number partially provided; asking for the process and required documents",
+      "Straightforward beneficiary change endorsement — no premium impact",
+      "Customer also wants an updated policy schedule once processed"
+    ],
+    "category": "Endorsement",
+    "priority": "P3",
+    "suggested_action": "Send the beneficiary change form to the customer, process the update once signed documentation is received, and issue an updated policy schedule.",
+    "draft_reply": "Dear Khun Pisanu,\n\nCongratulations on your marriage!\n\nUpdating your beneficiary on policy TH-LIF-18820 is a simple process. Here is what you need to do:\n\n1. Complete the attached Beneficiary Change Request form\n2. Sign the form (witness signature is not required for this policy type)\n3. Attach a copy of your wife's national ID (Khun Nisa Chaiyo) and your marriage certificate\n4. Return to us by email at policy.changes@qoala.co.th\n\nYour wife does not need to sign the form, though she will need to provide her ID as listed above.\n\nOnce we receive the documents, the change will be processed within 3 business days and an updated policy schedule confirming Khun Nisa as the new beneficiary will be sent to your registered email.\n\nWarm regards,\nQoala Life Policy Services Team",
+    "confidence": 0.92
+  }
+]

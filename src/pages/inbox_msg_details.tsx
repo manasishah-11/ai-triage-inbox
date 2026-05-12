@@ -4,7 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { useInboxStore } from "@store/useInboxStore";
 import type { InboxItem } from "@store/useInboxStore";
 import MessageDetails from "@components/msg_details/MessageDetails";
-import itemsFromJSON from "../mockData.json";
+import itemsFromJSON from "@mocks/mockInboxData.json";
 
 function InboxDetails() {
   const { messageId } = useParams<{ messageId: string }>();

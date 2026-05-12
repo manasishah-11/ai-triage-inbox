@@ -7,7 +7,6 @@ import { useInboxStore, type InboxItem } from "@store/useInboxStore";
 import BadgeSelect from "@components/common/BadgeSelect";
 import AiAssistPanel from "./AiAssistPanel";
 import ChannelPill from "./ChannelPill";
-import { AI_ASSIST_STATIC } from "./aiAssistStatic";
 import {
   PRIORITY_OPTIONS,
   PRIORITY_STYLES,
@@ -51,9 +50,10 @@ function MessageDetails({ message }: { message: InboxItem }) {
   return (
     <div className="space-y-6">
       <AiAssistPanel
+        key={message.id}
         open={aiAssistOpen}
         onClose={() => setAiAssistOpen(false)}
-        data={AI_ASSIST_STATIC}
+        messageId={message.id}
       />
       <div className="rounded-xl border border-slate-200 bg-white/80 shadow-sm dark:border-slate-800 dark:bg-slate-900/40 dark:shadow-none">
         <div className="border-b border-slate-200 px-5 py-5 dark:border-slate-800 sm:px-6">

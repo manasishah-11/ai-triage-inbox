@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useInboxStore } from "@store/useInboxStore";
 import InboxList from "@components/inbox/InboxList";
-import itemsFromJSON from "../mockData.json";
+import itemsFromJSON from "@mocks/mockInboxData.json";
 
 function Inbox() {
   const items = useInboxStore((s) => s.items);
